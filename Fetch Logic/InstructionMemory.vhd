@@ -17,22 +17,22 @@ entity InstructionMemory is
 	port(
         clk          :   in std_logic;
 		s_IMemAddr   :   in std_logic_vector(11 downto 2); -- PC[11:2]
+		iInstLd	     :	 in std_logic;
+		iInstExt     :	 in std_logic_vector(31 downto 0);
 		s_Inst       :   out std_logic_vector(31 downto 0) -- Instruction
+		
 
 	);
 end InstructionMemory;
 architecture behavioral of InstructionMemory is
-
- signal s_fake_data  :  std_logic_vector(31 downto 0) := (others => '0');
- signal s_fake_we    :  std_logic := '0';
 
 begin
  iMEM: entity work.mem
      port map(
          clk  => clk,
          addr => s_IMemAddr,
-         data => s_fake_data,
-         we   => s_fake_we,
+         data => iInstExt,
+         we   => iInstLd,
          q    => s_Inst
      );
 end behavioral;

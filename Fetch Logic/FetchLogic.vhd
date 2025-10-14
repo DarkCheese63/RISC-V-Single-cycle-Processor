@@ -32,6 +32,8 @@ architecture structure of FetchLogic is
 		port(
         clk          :   in std_logic;
 		s_IMemAddr   :   in std_logic_vector(11 downto 2); -- PC[11:2]
+		iInstLd	     :	 in std_logic;
+		iInstExt     :	 in std_logic_vector(31 downto 0);
 		s_Inst       :   out std_logic_vector(31 downto 0) -- Instruction
 
 	);
@@ -86,6 +88,8 @@ architecture structure of FetchLogic is
 			port map(
 				clk => clk,
 				s_IMemAddr => pc_val(11 downto 2),
+				iInstExt => (others => '0'),
+				iInstLd => '0',
 				s_Inst => instr
 			);
 end structure;

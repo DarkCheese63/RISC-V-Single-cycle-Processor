@@ -69,9 +69,41 @@ architecture mixed of tb_ControlUnit is
 	-- add, addi, and, andi, lui, lw, xor, xori, or, ori, slt, slti, sltiu, sll
 	-- srl, sra, sw, sub, beq, bne, blt, bge, bltu, bgeu, jal, jalr, lb, lh, lbu,
 	-- lhu, slli, srli, srai, auipc, wfi (or HALT)
-	c_IN <= x"00000033";
-	wait for 100 ns;
 
+    -------------------------------------------------------------------
+    -- Addi Instructions
+    c_IN <= x"00510093";
+    wait for 100 ns;
+
+    -------------------------------------------------------------------
+    -- Branch Instructions
+    -- beq x1, x2, offset ? opcode=1100011 funct3=000
+    c_IN <= x"00208063";
+    wait for 100 ns;
+
+    -- bne x1, x2, offset ? funct3=001
+    c_IN <= x"00209063";
+    wait for 100 ns;
+
+    -- blt x1, x2, offset ? funct3=100
+    c_IN <= x"0020A063";
+    wait for 100 ns;
+
+    -- bge x1, x2, offset ? funct3=101
+    c_IN <= x"0020B063";
+    wait for 100 ns;
+
+    -- bltu x1, x2, offset ? funct3=110
+    c_IN <= x"0020E063";
+    wait for 100 ns;
+
+    -- bgeu x1, x2, offset ? funct3=111
+    c_IN <= x"0020F063";
+    wait for 100 ns;
+
+    -- HALT 
+    c_IN <= (others => '0');
+    wait for 100 ns;
 
     wait;
   end process;

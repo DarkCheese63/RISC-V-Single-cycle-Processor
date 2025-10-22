@@ -31,7 +31,8 @@ architecture mixed of tb_ControlUnit is
 		Bsel : out std_logic;
 		ALUSel : out std_logic_vector(3 downto 0);
 		s_DMemWr : out std_logic;
-		WBSel : out std_logic_vector(1 downto 0));
+		WBSel : out std_logic_vector(1 downto 0);
+		BR	 : out std_logic);
   end component;
 
 
@@ -45,6 +46,7 @@ architecture mixed of tb_ControlUnit is
   signal ALUSel : std_logic_vector(3 downto 0);
   signal s_DMemWr : std_logic;
   signal WBSel : std_logic_vector(1 downto 0);
+  signal BR : std_logic;
 
  begin
 
@@ -59,7 +61,8 @@ architecture mixed of tb_ControlUnit is
 	 BSel => Bsel,
 	 s_DMemWr => s_DMemWr,
 	 WBSel => WBSel,
-	 ALUSel => ALUSel);
+	 ALUSel => ALUSel,
+	 BR => BR);
 
 
   P_TEST_CASES: process

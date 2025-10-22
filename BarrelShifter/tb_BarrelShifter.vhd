@@ -16,90 +16,102 @@ use std.textio.all;
 
 -- Usually name your testbench similar 1to below for clarity tb_<name>
 entity tb_barrelShifter is
-	generic(N : integer := 32;
-	  ALUWIDTH : integer := 4);
 end tb_barrelShifter;
 
 architecture mixed of tb_barrelShifter is
 
   component barrelShifter is
-		-- control data will grab these bits from bus 9[6:0] & 9[30, 14:12]. Reference schematic
-	  port(ALUsel         : in std_logic_vector(ALUWIDTH-1 downto 0);
-       iA               : in std_logic_vector(N-1 downto 0); --input a
-       iB               : in std_logic_vector(N-1 downto 0); --input b
-       ALU               : out std_logic_vector(N-1 downto 0)); --output 
+	port(
+        i_SHIFT : in  std_logic_vector(4 downto 0);   -- shift amount
+        ALUsel : in std_logic_vector(3 downto 0); --type of shift
+	i_D   : in  std_logic_vector(31 downto 0);  -- input data
+        o_O   : out std_logic_vector(31 downto 0)   -- shifted output
+    );
   end component;
 
 
 -- change input and output signals as needed.
-  signal ALUsel : std_logic_vector(ALUWIDTH-1 downto 0);
-  signal iA : std_logic_vector(N-1 downto 0); 
-  signal iB : std_logic_vector(N-1 downto 0);
-  signal ALU : std_logic_vector(N-1 downto 0);
+  signal i_SHIFT : std_logic_vector(4 downto 0); 
+  signal ALUsel : std_logic_vector(3 downto 0);
+  signal i_D : std_logic_vector(31 downto 0);
+  signal o_O : std_logic_vector(31 downto 0);
 
  begin
 
   -- Actually instantiate the component to test and wire all signals to the corresponding input or output. 
   DUT0 : barrelShifter
    port map(
+	 i_SHIFT => i_SHIFT,
 	 ALUsel => ALUsel,
-	 iA => iA,
-	 iB => iB,
-	 ALU => ALU);
+	 i_D => i_D,
+	 o_O => o_O);
 
 
   P_TEST_CASES: process
   begin
 
-	iA <= (others => '0');
-	iB <= (others => '0');
-	ALUsel <= (others => '0');
-	wait for 100 ns;
-    -------------------------------------------------------------------
-    -- Logical Left Shift (SLL)
-    -------------------------------------------------------------------
-    ALUsel <= "0111";   -- opcode for SLL
-    iA <= x"00000003";  -- binary 000...0011
-    iB <= x"00000002";  -- shift left by 2 ? expect 000...1100
+    -- TEST 1: Logical left shift
+    -----------------------------------------------------------------
+    i_D     <= x"000000F0";     -- 0000...11110000
+    ALUsel  <= "0000";          -- logical left
+    i_SHIFT <= "00001";         -- shift by 1
     wait for 100 ns;
 
-
-    -------------------------------------------------------------------
-    -- Logical Right Shift (SRL)
-    -------------------------------------------------------------------
-    ALUsel <= "1000";   -- opcode for SRL
-    iA <= x"00000010";  -- binary 000...10000
-    iB <= x"00000002";  -- shift right by 2 ? expect 000...0010
+    -- TEST 2: Logical right shift
+    -----------------------------------------------------------------
+    i_D     <= x"F0000000";     -- 1111...0000
+    ALUsel  <= "0001";          -- logical right
+    i_SHIFT <= "00010";         -- shift by 2
     wait for 100 ns;
 
-
-    -------------------------------------------------------------------
-    -- Arithmetic Right Shift (SRA)
-    -------------------------------------------------------------------
-    ALUsel <= "1001";   -- opcode for SRA
-    iA <= x"FFFFFFF0";  -- negative number (-16 signed)
-    iB <= x"00000002";  -- shift right by 2 ? expect 0xFFFFFFFC (-4)
+    -- TEST 3: Arithmetic right shift (with sign bit 1)
+    -----------------------------------------------------------------
+    i_D     <= x"F0000000";     -- MSB = 1
+    ALUsel  <= "1001";          -- arithmetic right
+    i_SHIFT <= "00100";         -- shift by 4
     wait for 100 ns;
 
-
-    -------------------------------------------------------------------
-    -- Edge Case: Shift by 0
-    -------------------------------------------------------------------
-    ALUsel <= "0111";   -- SLL
-    iA <= x"0000000F";
-    iB <= x"00000000";
+    -- TEST 4: Arithmetic right shift (with sign bit 0)
+    -----------------------------------------------------------------
+    i_D     <= x"0F000000";     -- MSB = 0
+    ALUsel  <= "1001";
+    i_SHIFT <= "00100";
     wait for 100 ns;
 
-
-    -------------------------------------------------------------------
-    -- Edge Case: Shift by max (31)
-    -------------------------------------------------------------------
-    ALUsel <= "1000";   -- SRL
-    iA <= x"80000000";
-    iB <= x"0000001F";  -- shift by 31 ? expect 0x00000001
+    -- TEST 5: Logical left shift by large amount (edge case)
+    -----------------------------------------------------------------
+    i_D     <= x"0000FFFF";
+    ALUsel  <= "0000";
+    i_SHIFT <= "11111";         -- shift by 31
     wait for 100 ns;
-  
 
+    -- TEST 6: Logical right shift by large amount
+    -----------------------------------------------------------------
+    i_D     <= x"80000000";     -- MSB = 1
+    ALUsel  <= "0001";
+    i_SHIFT <= "11111";         -- shift by 31
+    wait for 100 ns;
+
+    -- TEST 7: Arithmetic right shift by large amount
+    -----------------------------------------------------------------
+    i_D     <= x"80000000";     -- MSB = 1
+    ALUsel  <= "1001";
+    i_SHIFT <= "11111";         -- shift by 31
+    wait for 100 ns;
+
+    -- TEST 8: Zero input
+    -----------------------------------------------------------------
+    i_D     <= (others => '0');
+    ALUsel  <= "0000";
+    i_SHIFT <= "01010";         -- arbitrary shift
+    wait for 100 ns;
+
+    -- TEST 9: Random middle shift
+    -----------------------------------------------------------------
+    i_D     <= x"A5A5A5A5";     -- pattern test
+    ALUsel  <= "0000";
+    i_SHIFT <= "00101";         -- shift by 5
+    wait for 100 ns;
 
     wait;
   end process;

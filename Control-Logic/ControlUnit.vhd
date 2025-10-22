@@ -16,7 +16,8 @@ entity controlUnit is
         Bsel     : out std_logic;
         ALUSel   : out std_logic_vector(3 downto 0);
         s_DMemWr : out std_logic;
-        WBSel    : out std_logic_vector(1 downto 0)
+        WBSel    : out std_logic_vector(1 downto 0);
+	BR	 : out std_logic --indicates a branch is taken to be sent to and gate with result of branch comp logic
     );
 end controlUnit;
 
@@ -39,6 +40,7 @@ begin
         Bsel     <= '0';
         s_DMemWr <= '0';
         WBSel    <= "00";
+	BR       <= '0';
 
         case opcode is
             when "0110011" =>  -- R-type
@@ -64,6 +66,7 @@ begin
                 ImmSel <= "100";
                 Asel   <= '1';
                 WBSel  <= "00";
+		BR     <= '1';
                 if funct3 = "110" or funct3 = "111" then
                     BrUn <= '1';
                 else
@@ -98,7 +101,7 @@ begin
                 Bsel    <= '1';
                 WBSel   <= "10";
 
-            when "0001011" =>  -- HALT  (double check wanted Halt opcode in req)
+            when "0010100" =>  -- HALT  (double check wanted Halt opcode in req)
                 ImmSel   <= "000";
         	s_RegWr  <= '0';
         	BrUn     <= '0';
@@ -138,7 +141,7 @@ begin
                     when "010" => ALUSel <= "0101"; -- slt
                     when "011" => ALUSel <= "0110"; -- sltu
                     when "001" => ALUSel <= "0111"; -- sll
-                    when "101" =>  -- srli / srai for R-type
+                    when "101" =>  -- srl / sra for R-type
                         if funct7 = '1' then
                             ALUSel <= "1001"; -- sra
                         else

@@ -69,7 +69,57 @@ architecture structure of RISCV_Processor is
 
   -- TODO: You may add any additional signals or components your implementation 
   --       requires below this comment
+  -- control signals
+  signal s_ALUSel : std_logic_vector(3 downto 0); --ALU control
+  signal s_ASel   : std_logic; --select Amux
+  signal s_BSel   : std_logic; --select Bmux
+  signal s_ImmSel : std_logic(2 downto 0); --Type of ImmGen
+  signal s_WBSel  : std_logic(1 downto 0); --mux3t1 selector
 
+  --mux3t1 input
+  signal s_PCP4   : std_logic_vector(31 downto 0);
+  signal s_ALUOut : std_logic_vector(31 downto 0);
+  --s_DMemOut is third choice
+
+  component controlUnit is 
+    port(
+        c_IN     : in  std_logic_vector(31 downto 0);
+        ImmSel   : out std_logic_vector(2 downto 0);
+        s_RegWr  : out std_logic;
+        BrUn     : out std_logic;
+        Asel     : out std_logic;
+        Bsel     : out std_logic;
+        ALUSel   : out std_logic_vector(3 downto 0);
+        s_DMemWr : out std_logic;
+        WBSel    : out std_logic_vector(1 downto 0);
+	BR	 : out std_logic --indicates a branch is taken to be sent to and gate with result of branch comp logic
+    );
+  end controlUnit;
+
+  component ALU is 
+    port(
+	A	 : in std_logic_vector(31 downto 0); -- first data input
+	B	 : in std_logic_vector(31 downto 0); -- second data input
+	ALUCtrl	 : in std_logic_vector(3 downto 0); -- output of the alu control
+	Result	 : out std_logic_vector(31 downto 0);
+	zero	 : out std_logic
+	);
+  end ALU;
+
+  component FetchLogic is
+    port(
+	rst      : in std_logic;
+	clk      : in std_logic;
+	imm      : in std_logic_vector(31 downto 0); -- immediate value branch/jump
+	ALUo     : in std_logic_vector(31 downto 0); -- jalr target from alu 
+	PCsrc    : in std_logic_vector(1 downto 0); -- pc select 00 = pc+4, 01 = branch, 10 = jump, 11 = jalr
+	currPC   : out std_logic_vector(31 downto 0); -- current pc value
+	instr    : out std_logic_vector(31 downto 0) -- fetched instruction
+	);
+  end FetchLogic;
+
+  --add ImmGen, edit extender
+  
 begin
 
   -- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.

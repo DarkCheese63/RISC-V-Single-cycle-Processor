@@ -1,0 +1,1206 @@
+# //  Questa Sim-64
+# //  Version 2025.1_2 linux_x86_64 Apr  7 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+cd /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel
+# reading modelsim.ini
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/andg2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:38 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 15:46:38 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/xorg2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:40 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 15:46:41 on Oct 24,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/org2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:42 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 15:46:42 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/dffg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:46 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 15:46:46 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/invg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:48 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 15:46:48 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:51 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 15:46:51 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:54 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 15:46:54 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/nAdd_Sub.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:46:56 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/nAdd_Sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nAdd_Sub
+# -- Compiling architecture structure of nAdd_Sub
+# End time: 15:46:57 on Oct 24,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/decoder_5to32.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:47:03 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/decoder_5to32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity decoder_5to32
+# -- Compiling architecture behavior of decoder_5to32
+# End time: 15:47:03 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:09:49 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:09:49 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:10:54 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:10:54 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:11:06 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:11:06 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:11:09 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:11:09 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:11:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:11:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:11:13 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:11:13 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Modified modelsim.ini
+# Modified modelsim.ini
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:12:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:12:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:12:14 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:12:14 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:12:16 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd(120): Visible name 'N_Reg' is not an entity. Use expanded name.
+# ** Note: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/boilerplate_src/TopLevel/RegisterFile.vhd(205): VHDL Compiler exiting
+# End time: 16:12:16 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+cd /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel
+# reading modelsim.ini
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:14:53 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# ** Error: (vcom-11) Could not find work.dffg.
+# ** Error (suppressible): /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd(34): (vcom-1195) Cannot find expanded name "work.dffg".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd(34): Unknown expanded name.
+# ** Note: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd(43): VHDL Compiler exiting
+# End time: 16:14:53 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:00 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:15:00 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:02 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:15:02 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:06 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 16:15:06 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:08 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:15:08 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:13 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:15:13 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:15 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:15:15 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:20 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:15:20 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:23 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 16:15:23 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:25 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# -- Loading entity mux2t1
+# End time: 16:15:25 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:28 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux3t1_N
+# -- Compiling architecture behavioral of mux3t1_N
+# End time: 16:15:28 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:30 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux4t1_N
+# -- Compiling architecture structural of mux4t1_N
+# -- Loading entity mux2t1
+# End time: 16:15:30 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:32 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# -- Loading entity mux4t1_N
+# -- Loading entity mux2t1_N
+# End time: 16:15:32 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:35 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# -- Loading entity mux4t1_N
+# -- Loading entity mux2t1_N
+# End time: 16:15:35 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:37 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity decoder_5to32
+# -- Compiling architecture behavior of decoder_5to32
+# End time: 16:15:37 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:45 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nAdd_Sub
+# -- Compiling architecture structure of nAdd_Sub
+# End time: 16:15:45 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:47 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Full_Adder
+# -- Compiling architecture structure of N_Full_Adder
+# End time: 16:15:47 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:53 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity barrelShifter
+# -- Compiling architecture structural of barrelShifter
+# End time: 16:15:53 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:55 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity barrelShifter
+# -- Compiling architecture structural of barrelShifter
+# End time: 16:15:55 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:57 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity branch_comp
+# -- Compiling architecture dataflow of branch_comp
+# End time: 16:15:57 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:15:59 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controlUnit
+# -- Compiling architecture dataflow of controlUnit
+# End time: 16:15:59 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:16:02 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity FetchLogic
+# -- Compiling architecture structure of FetchLogic
+# End time: 16:16:02 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:16:09 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Full_Adder
+# -- Compiling architecture structure of Full_Adder
+# End time: 16:16:09 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:16:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ImmGen
+# -- Compiling architecture behavioral of ImmGen
+# End time: 16:16:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:16:13 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InstructionMemory
+# -- Compiling architecture behavioral of InstructionMemory
+# ** Error: (vcom-11) Could not find work.mem.
+# ** Error (suppressible): /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(28): (vcom-1195) Cannot find expanded name "work.mem".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(28): Unknown expanded name.
+# ** Note: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(36): VHDL Compiler exiting
+# End time: 16:16:13 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:16:21 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 16:16:21 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:16:23 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InstructionMemory
+# -- Compiling architecture behavioral of InstructionMemory
+# -- Loading entity mem
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(31): (vcom-1136) Unknown identifier "s_IMemAddr".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(32): (vcom-1136) Unknown identifier "iInstExt".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(33): (vcom-1136) Unknown identifier "iInstLd".
+# ** Note: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(36): VHDL Compiler exiting
+# End time: 16:16:23 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:18:06 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:18:06 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:18:09 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:18:10 on Oct 24,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:18:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:18:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Modified modelsim.ini
+# Modified modelsim.ini
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:20:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:20:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:20:12 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:20:12 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:20:15 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:20:15 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:20:17 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:20:17 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:20:18 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:20:18 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:23:33 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:23:33 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:23:35 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:23:35 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:23:38 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:23:38 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:23:39 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:23:39 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALU.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:18 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture structural of ALU
+# End time: 16:27:18 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALUControl.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:21 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALUControl.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALUControl
+# -- Compiling architecture behavioral of ALUControl
+# End time: 16:27:21 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:23 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:27:23 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:28 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity barrelShifter
+# -- Compiling architecture structural of barrelShifter
+# End time: 16:27:28 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:30 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity branch_comp
+# -- Compiling architecture dataflow of branch_comp
+# End time: 16:27:30 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:31 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controlUnit
+# -- Compiling architecture dataflow of controlUnit
+# End time: 16:27:31 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:33 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity decoder_5to32
+# -- Compiling architecture behavior of decoder_5to32
+# End time: 16:27:33 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:35 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:27:35 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:37 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity FetchLogic
+# -- Compiling architecture structure of FetchLogic
+# End time: 16:27:37 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:38 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Full_Adder
+# -- Compiling architecture structure of Full_Adder
+# End time: 16:27:38 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:41 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ImmGen
+# -- Compiling architecture behavioral of ImmGen
+# End time: 16:27:41 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:42 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity InstructionMemory
+# -- Compiling architecture behavioral of InstructionMemory
+# -- Loading entity mem
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(31): (vcom-1136) Unknown identifier "s_IMemAddr".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(32): (vcom-1136) Unknown identifier "iInstExt".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(33): (vcom-1136) Unknown identifier "iInstLd".
+# ** Note: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd(36): VHDL Compiler exiting
+# End time: 16:27:42 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:46 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 16:27:46 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:48 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 16:27:48 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:50 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 16:27:50 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:52 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# -- Loading entity mux2t1
+# End time: 16:27:52 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:54 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux3t1_N
+# -- Compiling architecture behavioral of mux3t1_N
+# End time: 16:27:54 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:55 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux4t1_N
+# -- Compiling architecture structural of mux4t1_N
+# -- Loading entity mux2t1
+# End time: 16:27:56 on Oct 24,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:57 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# -- Loading entity mux4t1_N
+# -- Loading entity mux2t1_N
+# End time: 16:27:57 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:27:59 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Full_Adder
+# -- Compiling architecture structure of N_Full_Adder
+# End time: 16:27:59 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:02 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:28:02 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:04 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nAdd_Sub
+# -- Compiling architecture structure of nAdd_Sub
+# End time: 16:28:04 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:06 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:28:06 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ProgramCounter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:08 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ProgramCounter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ProgramCounter
+# -- Compiling architecture behavioral of ProgramCounter
+# End time: 16:28:08 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:09 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Reg
+# -- Compiling architecture behavior of Reg
+# End time: 16:28:10 on Oct 24,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:28:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:13 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Error: (vcom-11) Could not find work.riscv_types.
+# ** Error (suppressible): /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd(21): (vcom-1195) Cannot find expanded name "work.RISCV_types".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd(21): Unknown expanded name.
+# ** Note: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd(23): VHDL Compiler exiting
+# End time: 16:28:13 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/xorg2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:17 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:28:17 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:28:19 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Error: (vcom-11) Could not find work.riscv_types.
+# ** Error (suppressible): /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd(21): (vcom-1195) Cannot find expanded name "work.RISCV_types".
+# ** Error: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd(21): Unknown expanded name.
+# ** Note: /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd(23): VHDL Compiler exiting
+# End time: 16:28:19 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:38:25 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:38:25 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:38:30 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:38:30 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:08 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:39:08 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:10 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:10 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:11 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:11 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:12 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:12 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:14 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:39:14 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:17 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity N_Reg
+# -- Compiling architecture structure of N_Reg
+# -- Loading entity dffg
+# End time: 16:39:17 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 16:39:20 on Oct 24,2025
+# vcom -reportprogress 300 -work work /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterFile
+# -- Compiling architecture regFile of RegisterFile
+# -- Loading entity N_Reg
+# End time: 16:39:20 on Oct 24,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+cd /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel
+# reading modelsim.ini

@@ -1,0 +1,1195 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11e vcom 2025.1_2 2025.04, Apr  7 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/cpre3810-toolflow/proj/src/TopLevel
+T_opt
+!s110 1761285197
+V8C2>3Jf[<UNVhKQzYlUGO1
+04 14 3 work tb_branch_comp sim 1
+=1-000ae431a4f1-68fb144d-75844-d5d6
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2025.1_2;82
+R2
+Ealu
+Z3 w1761337580
+Z4 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 74
+Z7 d/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel
+Z8 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALU.vhd
+Z9 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALU.vhd
+l0
+L18 1
+VfDlF=E@J8fE_cGUhX5HEZ0
+!s100 JJT2PUDiTg;BLmEV`U=z^1
+Z10 OL;C;2025.1_2;82
+33
+Z11 !s110 1761341238
+!i10b 1
+Z12 !s108 1761341238.000000
+Z13 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALU.vhd|
+Z14 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALU.vhd|
+!i113 0
+Z15 o-work work
+Z16 tExplicit 1 NoCoverage 1 CvgOpt 0
+Astructural
+R4
+R5
+R6
+DEx4 work 3 alu 0 22 fDlF=E@J8fE_cGUhX5HEZ0
+!i122 74
+l94
+L29 208
+VWRRa=<XPDG99z=_4zXd=52
+!s100 bdje5QgPK@Ye4YH6zM5^Q3
+R10
+33
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 0
+R15
+R16
+Ealucontrol
+Z17 w1761239764
+R4
+R5
+R6
+!i122 75
+R7
+Z18 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALUControl.vhd
+Z19 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALUControl.vhd
+l0
+Z20 L17 1
+V0Mk?E[m86>a>YD>Leok6b1
+!s100 m>`n5mG1WXa9F1FjM@PRb1
+R10
+33
+Z21 !s110 1761341241
+!i10b 1
+Z22 !s108 1761341241.000000
+Z23 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALUControl.vhd|
+Z24 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALUControl.vhd|
+!i113 0
+R15
+R16
+Abehavioral
+R4
+R5
+R6
+DEx4 work 10 alucontrol 0 22 0Mk?E[m86>a>YD>Leok6b1
+!i122 75
+l27
+L26 39
+VWWb?Y4^6A2lXBznXG@GaA1
+!s100 V8ZV1HzDKaeLhU2SlcFSK2
+R10
+33
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 0
+R15
+R16
+Eandg2
+R17
+R5
+R6
+!i122 76
+R7
+Z25 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd
+Z26 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd
+l0
+Z27 L23 1
+VzJ2OoPJ=<ja2?Y;OcjQk;3
+!s100 YT?bGzEmcFo:DlnoC^B4_0
+R10
+33
+Z28 !s110 1761341243
+!i10b 1
+Z29 !s108 1761341243.000000
+Z30 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd|
+Z31 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/andg2.vhd|
+!i113 0
+R15
+R16
+Adataflow
+R5
+R6
+DEx4 work 5 andg2 0 22 zJ2OoPJ=<ja2?Y;OcjQk;3
+!i122 76
+l32
+Z32 L31 6
+V3oa1[>iDZj;2zVo:oz1>e2
+!s100 I`@Z@UBObS]<7m8bPgKUS1
+R10
+33
+R28
+!i10b 1
+R29
+R30
+R31
+!i113 0
+R15
+R16
+Ebarrelshifter
+R17
+R5
+R6
+!i122 77
+R7
+Z33 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd
+Z34 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd
+l0
+L14 1
+V8Rk9^2X4oD3?;k`izO6241
+!s100 l@80A5eWb4`:M>b@9Nijc1
+R10
+33
+Z35 !s110 1761341248
+!i10b 1
+Z36 !s108 1761341248.000000
+Z37 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd|
+Z38 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd|
+!i113 0
+R15
+R16
+Astructural
+R5
+R6
+DEx4 work 13 barrelshifter 0 22 8Rk9^2X4oD3?;k`izO6241
+!i122 77
+l40
+L23 130
+V]AFZ=ki;0h:Zzb[7o[2633
+!s100 ^<G<[<fa49fo^Vk15j9:h0
+R10
+33
+R35
+!i10b 1
+R36
+R37
+R38
+!i113 0
+R15
+R16
+Ebranch_comp
+Z39 w1761285370
+R4
+R5
+R6
+!i122 78
+R7
+Z40 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd
+Z41 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd
+l0
+Z42 L10 1
+VS;C`Z9@=B0Kf_;>lID<RA0
+!s100 Yh_h;7KO9XZB1XjA3GZJK0
+R10
+33
+Z43 !s110 1761341250
+!i10b 1
+Z44 !s108 1761341250.000000
+Z45 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd|
+Z46 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/branch_comp.vhd|
+!i113 0
+R15
+R16
+Adataflow
+R4
+R5
+R6
+DEx4 work 11 branch_comp 0 22 S;C`Z9@=B0Kf_;>lID<RA0
+!i122 78
+l23
+L20 62
+VmPF1Zc^5kKnV1H0AOM7le1
+!s100 0nJ39d2mAi@^mLcHFX;ho3
+R10
+33
+R43
+!i10b 1
+R44
+R45
+R46
+!i113 0
+R15
+R16
+Econtrolunit
+Z47 w1761337833
+R5
+R6
+!i122 79
+R7
+Z48 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd
+Z49 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd
+l0
+L8 1
+VG1Hkcj_X1RG<zb9=?J:5h3
+!s100 Wl5EDD7anKDR:lffklPTD3
+R10
+33
+Z50 !s110 1761341251
+!i10b 1
+Z51 !s108 1761341251.000000
+Z52 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd|
+Z53 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd|
+!i113 0
+R15
+R16
+Adataflow
+R5
+R6
+DEx4 work 11 controlunit 0 22 G1Hkcj_X1RG<zb9=?J:5h3
+!i122 79
+l29
+L25 154
+VJ4VNBYI:mJTkYaeQ5Y:K>2
+!s100 mjGn]A:Jm>0OZOjODR^AF0
+R10
+33
+R50
+!i10b 1
+R51
+R52
+R53
+!i113 0
+R15
+R16
+Edecoder_5to32
+Z54 w1759273530
+R4
+R5
+R6
+!i122 80
+R7
+Z55 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd
+Z56 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd
+l0
+L21 1
+VV6n7fZWfk99l45eKG7Ro^1
+!s100 nN`?GRk[^^n0mOBz?_eE31
+R10
+33
+Z57 !s110 1761341253
+!i10b 1
+Z58 !s108 1761341253.000000
+Z59 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd|
+Z60 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/decoder_5to32.vhd|
+!i113 0
+R15
+R16
+Abehavior
+R4
+R5
+R6
+DEx4 work 13 decoder_5to32 0 22 V6n7fZWfk99l45eKG7Ro^1
+!i122 80
+l29
+L28 11
+V;=`:TY1:kaTTcaa6g><=d0
+!s100 D2LKZ@[EnAQ1RIE>BKImI2
+R10
+33
+R57
+!i10b 1
+R58
+R59
+R60
+!i113 0
+R15
+R16
+Edffg
+R54
+R5
+R6
+!i122 111
+R7
+Z61 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd
+Z62 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd
+l0
+R27
+VH7[7fQclb0RF5ljXe<KKY0
+!s100 T4gcXQGMCgKJbn8XhBM;b0
+R10
+33
+Z63 !s110 1761341954
+!i10b 1
+Z64 !s108 1761341954.000000
+Z65 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd|
+Z66 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/dffg.vhd|
+!i113 0
+R15
+R16
+Amixed
+R5
+R6
+Z67 DEx4 work 4 dffg 0 22 H7[7fQclb0RF5ljXe<KKY0
+!i122 111
+l37
+L33 29
+VM>A>L<U`E78`0<h>bR]Yh3
+!s100 iOdlTUid@@]UimFK_53^C1
+R10
+33
+R63
+!i10b 1
+R64
+R65
+R66
+!i113 0
+R15
+R16
+Efetchlogic
+Z68 w1761336457
+R4
+R5
+R6
+!i122 82
+R7
+Z69 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd
+Z70 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd
+l0
+R20
+V<:WjgNRLl<`C4lzLR8<^V2
+!s100 @om6DUL`g9C9=_6=iLz:=3
+R10
+33
+Z71 !s110 1761341257
+!i10b 1
+Z72 !s108 1761341257.000000
+Z73 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd|
+Z74 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd|
+!i113 0
+R15
+R16
+Astructure
+R4
+R5
+R6
+DEx4 work 10 fetchlogic 0 22 <:WjgNRLl<`C4lzLR8<^V2
+!i122 82
+l59
+L30 68
+V^J1`@Amb@5`3SSkYS`GK=0
+!s100 KkEUkeWB^L:0oe@IKZ8k41
+R10
+33
+R71
+!i10b 1
+R72
+R73
+R74
+!i113 0
+R15
+R16
+Efull_adder
+R17
+R5
+R6
+!i122 83
+R7
+Z75 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd
+Z76 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd
+l0
+Z77 L16 1
+V^meZ:?7TcPYfQJMMVNEUo3
+!s100 e3gW95Dem[Z^YThZODzSg1
+R10
+33
+Z78 !s110 1761341258
+!i10b 1
+Z79 !s108 1761341258.000000
+Z80 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd|
+Z81 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Full_Adder.vhd|
+!i113 0
+R15
+R16
+Astructure
+R5
+R6
+DEx4 work 10 full_adder 0 22 ^meZ:?7TcPYfQJMMVNEUo3
+!i122 83
+l56
+L25 48
+Vc2^zl:878jbE1^BfHWN`b3
+!s100 9hkH[Ka7KdPljb3;Dg?iG2
+R10
+33
+R78
+!i10b 1
+R79
+R80
+R81
+!i113 0
+R15
+R16
+Eimmgen
+Z82 w1761287319
+R5
+R6
+!i122 84
+R7
+Z83 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd
+Z84 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd
+l0
+L8 1
+V^hhgUBn]=mLY2DYI5JUdF1
+!s100 ?_Og]Y1J6QmcOZLd[EB183
+R10
+33
+Z85 !s110 1761341261
+!i10b 1
+Z86 !s108 1761341261.000000
+Z87 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd|
+Z88 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ImmGen.vhd|
+!i113 0
+R15
+R16
+Abehavioral
+R5
+R6
+DEx4 work 6 immgen 0 22 ^hhgUBn]=mLY2DYI5JUdF1
+!i122 84
+l22
+L16 21
+VPHWFWk@bGm::7:_?D94>`2
+!s100 7aG]gGQobKGgm?G<4GNl<0
+R10
+33
+R85
+!i10b 1
+R86
+R87
+R88
+!i113 0
+R15
+R16
+Einstructionmemory
+Z89 w1761084837
+R4
+R5
+R6
+!i122 85
+R7
+8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd
+F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd
+l0
+R77
+Vo[PjJ9=On:Yo6bzg94E0B0
+!s100 ?Td>z81[k7>`8aYi8A;`m2
+R10
+33
+!s110 1761341262
+!i10b 1
+!s108 1761341262.000000
+!s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd|
+!s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/InstructionMemory.vhd|
+!i113 0
+R15
+R16
+Einvg
+R17
+R5
+R6
+!i122 86
+R7
+Z90 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd
+Z91 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd
+l0
+R27
+VzJhOLc0g_4RfSF]IXa;:73
+!s100 _XK?_^5z0Rm1<k12?;5R?2
+R10
+33
+Z92 !s110 1761341266
+!i10b 1
+Z93 !s108 1761341266.000000
+Z94 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd|
+Z95 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/invg.vhd|
+!i113 0
+R15
+R16
+Adataflow
+R5
+R6
+DEx4 work 4 invg 0 22 zJhOLc0g_4RfSF]IXa;:73
+!i122 86
+l31
+L30 6
+VT@AA60h>IXVJ?D^`RRiZk1
+!s100 bk7I76o8e1LURdoZEQb8H0
+R10
+33
+R92
+!i10b 1
+R93
+R94
+R95
+!i113 0
+R15
+R16
+Emem
+R89
+R4
+R5
+R6
+!i122 87
+R7
+Z96 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd
+Z97 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd
+l0
+L9 1
+VIaWjVnRIZ@L`GD?cZFAJ]1
+!s100 6nX8`H4`ecZO5kSW]>3zE1
+R10
+33
+Z98 !s110 1761341268
+!i10b 1
+Z99 !s108 1761341268.000000
+Z100 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd|
+Z101 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mem.vhd|
+!i113 0
+R15
+R16
+Artl
+R4
+R5
+R6
+DEx4 work 3 mem 0 22 IaWjVnRIZ@L`GD?cZFAJ]1
+!i122 87
+l38
+L28 24
+V9`YRb5JS0c?f]mcBnOk0U3
+!s100 lm9NOOd3?5?^28X?Ff2l33
+R10
+33
+R98
+!i10b 1
+R99
+R100
+R101
+!i113 0
+R15
+R16
+Emux2t1
+Z102 w1761279921
+R5
+R6
+!i122 88
+R7
+Z103 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd
+Z104 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd
+l0
+Z105 L15 1
+V54z5h?lELAgQbE@Nja1ik1
+!s100 H11m4U50>Y>M1k0[Agd1?0
+R10
+33
+Z106 !s110 1761341270
+!i10b 1
+Z107 !s108 1761341270.000000
+Z108 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd|
+Z109 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1.vhd|
+!i113 0
+R15
+R16
+Astructural
+R5
+R6
+Z110 DEx4 work 6 mux2t1 0 22 54z5h?lELAgQbE@Nja1ik1
+!i122 88
+l45
+L22 45
+VUh?PEX=NH[j:<Y>_QiX2D1
+!s100 dDU5>>50DTl[_[kmjI_B?2
+R10
+33
+R106
+!i10b 1
+R107
+R108
+R109
+!i113 0
+R15
+R16
+Emux2t1_n
+Z111 w1761337994
+R5
+R6
+!i122 89
+R7
+Z112 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd
+Z113 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd
+l0
+L19 1
+VJTehOeR;8[k[<@0fLRNOW0
+!s100 [`dB9H6E?j6d_VU@d0Il50
+R10
+33
+Z114 !s110 1761341272
+!i10b 1
+Z115 !s108 1761341272.000000
+Z116 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd|
+Z117 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux2t1_N.vhd|
+!i113 0
+R15
+R16
+Astructural
+R110
+R5
+R6
+Z118 DEx4 work 8 mux2t1_n 0 22 JTehOeR;8[k[<@0fLRNOW0
+!i122 89
+l30
+L29 13
+V1R1NV3zhZQjC]n<O8ee0L0
+!s100 e`eo5lGJ_@4K6jK@jfVVb0
+R10
+33
+R114
+!i10b 1
+R115
+R116
+R117
+!i113 0
+R15
+R16
+Emux32t1_n
+R54
+R5
+R6
+!i122 92
+R7
+Z119 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd
+Z120 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd
+l0
+R77
+V_W4FnliCc;EXai@H0:0Ud2
+!s100 jg[R[UY@LL72cUj0aiZ<E3
+R10
+33
+Z121 !s110 1761341277
+!i10b 1
+Z122 !s108 1761341277.000000
+Z123 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd|
+Z124 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux32t1_N.vhd|
+!i113 0
+R15
+R16
+Astructural
+R118
+Z125 DEx4 work 8 mux4t1_n 0 22 ?kM=WPg]hOd_QodWeLH==3
+R5
+R6
+DEx4 work 9 mux32t1_n 0 22 _W4FnliCc;EXai@H0:0Ud2
+!i122 92
+l64
+L56 57
+Vea6lQzKoHH8NFH0eZVRg<0
+!s100 93B`bRESBUzf2X5A<J3Qe3
+R10
+33
+R121
+!i10b 1
+R122
+R123
+R124
+!i113 0
+R15
+R16
+Emux3t1_n
+Z126 w1761335819
+R4
+R5
+R6
+!i122 90
+R7
+Z127 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd
+Z128 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd
+l0
+R42
+V0AIma:49`_zGj]^aNLcjZ1
+!s100 gc;A<MFahjd;8ncVlO55S3
+R10
+33
+Z129 !s110 1761341274
+!i10b 1
+Z130 !s108 1761341274.000000
+Z131 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd|
+Z132 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux3t1_N.vhd|
+!i113 0
+R15
+R16
+Abehavioral
+R4
+R5
+R6
+DEx4 work 8 mux3t1_n 0 22 0AIma:49`_zGj]^aNLcjZ1
+!i122 90
+l21
+L20 8
+V>cd5SLQScC0ZC[;W^08SP3
+!s100 LY]8kFfL;^U;b@ER_BO:82
+R10
+33
+R129
+!i10b 1
+R130
+R131
+R132
+!i113 0
+R15
+R16
+Emux4t1_n
+R54
+R5
+R6
+!i122 91
+R7
+Z133 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd
+Z134 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd
+l0
+R20
+V?kM=WPg]hOd_QodWeLH==3
+!s100 kU^DUcI[ZDB?RP2gaZH]f1
+R10
+33
+Z135 !s110 1761341276
+!i10b 1
+Z136 !s108 1761341275.000000
+Z137 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd|
+Z138 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd|
+!i113 0
+R15
+R16
+Astructural
+R110
+R5
+R6
+R125
+!i122 91
+l31
+L29 36
+Vk<7_jdMUXbF42jZ7oK7JF1
+!s100 d2[2KndS>z<4hk`XekGS:2
+R10
+33
+R135
+!i10b 1
+R136
+R137
+R138
+!i113 0
+R15
+R16
+En_full_adder
+R17
+R5
+R6
+!i122 93
+R7
+Z139 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd
+Z140 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd
+l0
+R77
+V=SQ4zJI<oe0fgl::@J]3i1
+!s100 k`1I`=zFzMgdc88i^>B2d2
+R10
+33
+Z141 !s110 1761341279
+!i10b 1
+Z142 !s108 1761341279.000000
+Z143 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd|
+Z144 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Full_Adder.vhd|
+!i113 0
+R15
+R16
+Astructure
+R5
+R6
+DEx4 work 12 n_full_adder 0 22 =SQ4zJI<oe0fgl::@J]3i1
+!i122 93
+l38
+L26 30
+V8EZT?0;<Sdi]4OPYjHPT00
+!s100 cfa<lidFinj<AkjTggSGN2
+R10
+33
+R141
+!i10b 1
+R142
+R143
+R144
+!i113 0
+R15
+R16
+En_reg
+R54
+R5
+R6
+!i122 112
+R7
+Z145 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+Z146 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd
+l0
+L20 1
+V4MEALg3]>IO1LIUNLdVLX2
+!s100 L>JH:4oNTU2G@5QJ]jB<h0
+R10
+33
+Z147 !s110 1761341957
+!i10b 1
+Z148 !s108 1761341957.000000
+Z149 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd|
+Z150 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/N_Reg.vhd|
+!i113 0
+R15
+R16
+Astructure
+R67
+R5
+R6
+Z151 DEx4 work 5 n_reg 0 22 4MEALg3]>IO1LIUNLdVLX2
+!i122 112
+l32
+L31 13
+VZ=;BbzGlN<XOHB7K>_3fY0
+!s100 o_lN[4a?f5cVICmnjC2Ii3
+R10
+33
+R147
+!i10b 1
+R148
+R149
+R150
+!i113 0
+R15
+R16
+Enadd_sub
+R17
+R5
+R6
+!i122 95
+R7
+Z152 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd
+Z153 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd
+l0
+R105
+VXn7eA:z9MPLgAjE8P9JkU2
+!s100 O_QH[5Nn`JRGgP7K4hzX11
+R10
+33
+Z154 !s110 1761341284
+!i10b 1
+Z155 !s108 1761341284.000000
+Z156 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd|
+Z157 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd|
+!i113 0
+R15
+R16
+Astructure
+R5
+R6
+DEx4 work 8 nadd_sub 0 22 Xn7eA:z9MPLgAjE8P9JkU2
+!i122 95
+l53
+L25 58
+VGbbRQ>mLe:_25_THF49:T2
+!s100 3I@HEO[e0`J5z139Bk@5f3
+R10
+33
+R154
+!i10b 1
+R155
+R156
+R157
+!i113 0
+R15
+R16
+Eorg2
+R17
+R5
+R6
+!i122 96
+R7
+Z158 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd
+Z159 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd
+l0
+R27
+V0FzB9ATDX9TV=M:n@=VB83
+!s100 bGQ1F9eW^Q17OoL9h4g7z2
+R10
+33
+Z160 !s110 1761341286
+!i10b 1
+Z161 !s108 1761341286.000000
+Z162 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd|
+Z163 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd|
+!i113 0
+R15
+R16
+Adataflow
+R5
+R6
+DEx4 work 4 org2 0 22 0FzB9ATDX9TV=M:n@=VB83
+!i122 96
+l32
+R32
+V0JC>N7cRXc=9bni@>dg7o3
+!s100 h5_AzR3TdRA0a_K=dQ>mI2
+R10
+33
+R160
+!i10b 1
+R161
+R162
+R163
+!i113 0
+R15
+R16
+Eprogramcounter
+R89
+R5
+R6
+!i122 97
+R7
+Z164 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ProgramCounter.vhd
+Z165 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ProgramCounter.vhd
+l0
+R105
+Vio3^G0ZT5TihEXYThc;O73
+!s100 UEII`b@WLTB[J_2]UcB1L1
+R10
+33
+Z166 !s110 1761341288
+!i10b 1
+Z167 !s108 1761341288.000000
+Z168 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ProgramCounter.vhd|
+Z169 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ProgramCounter.vhd|
+!i113 0
+R15
+R16
+Abehavioral
+R5
+R6
+DEx4 work 14 programcounter 0 22 io3^G0ZT5TihEXYThc;O73
+!i122 97
+l26
+L24 14
+Vzl<zQRjeBQYMS0<9FglHc3
+!s100 MSc;G7^^EchFVU;O0Q3z71
+R10
+33
+R166
+!i10b 1
+R167
+R168
+R169
+!i113 0
+R15
+R16
+Ereg
+R54
+R5
+R6
+!i122 98
+R7
+Z170 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd
+Z171 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd
+l0
+R27
+V`PX^3h8TjOoe:BSO9PXbo0
+!s100 [YR2K8dfC;91mFlo`2lkO2
+R10
+33
+Z172 !s110 1761341290
+!i10b 1
+Z173 !s108 1761341289.000000
+Z174 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd|
+Z175 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/Reg.vhd|
+!i113 0
+R15
+R16
+Abehavior
+R5
+R6
+DEx4 work 3 reg 0 22 `PX^3h8TjOoe:BSO9PXbo0
+!i122 98
+l34
+L33 11
+VW]PYjc?1E[F?b0T?m:Xa]1
+!s100 nf[`4S9cGXRcE4GX;@:6^1
+R10
+33
+R172
+!i10b 1
+R173
+R174
+R175
+!i113 0
+R15
+R16
+Eregisterfile
+R54
+R4
+R5
+R6
+!i122 113
+R7
+Z176 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+Z177 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd
+l0
+R77
+VQG1Ii_X9C4X>P==FgVWOU3
+!s100 BiJaoog=QhC0fBjcQR0DP3
+R10
+33
+Z178 !s110 1761341960
+!i10b 1
+Z179 !s108 1761341960.000000
+Z180 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd|
+Z181 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/RegisterFile.vhd|
+!i113 0
+R15
+R16
+Aregfile
+R151
+R4
+R5
+R6
+Z182 DEx4 work 12 registerfile 0 22 QG1Ii_X9C4X>P==FgVWOU3
+!i122 113
+l99
+Z183 L30 176
+Z184 VHE9Z>Mh[Aofebkafo5>a=3
+Z185 !s100 zWhg`jNMY]lDP:oUb<Pdg2
+R10
+33
+R178
+!i10b 1
+R179
+R180
+R181
+!i113 0
+R15
+R16
+Etb_branch_comp
+Z186 w1761284797
+R4
+R5
+R6
+!i122 20
+R2
+Z187 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/cpre3810-toolflow/proj/src/TopLevel/tb_branch_comp.vhd
+Z188 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/cpre3810-toolflow/proj/src/TopLevel/tb_branch_comp.vhd
+l0
+L5 1
+VO;@KeYXoYJ[JL9k5B`l4:3
+!s100 WUPl6;TcX6X5F:D0oRo[P2
+R10
+33
+Z189 !s110 1761285190
+!i10b 1
+Z190 !s108 1761285190.000000
+Z191 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/cpre3810-toolflow/proj/src/TopLevel/tb_branch_comp.vhd|
+Z192 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/cpre3810-toolflow/proj/src/TopLevel/tb_branch_comp.vhd|
+!i113 0
+R15
+R16
+Asim
+DEx4 work 11 branch_comp 0 22 jKGF7e8U8AnU8T_hFnCz<0
+R4
+R5
+R6
+DEx4 work 14 tb_branch_comp 0 22 O;@KeYXoYJ[JL9k5B`l4:3
+!i122 20
+l17
+L8 78
+VbAAlOEb7jBz?ERfU822Ao2
+!s100 =?A2@O11S`HA1NF7EKWF=0
+R10
+33
+R189
+!i10b 1
+R190
+R191
+R192
+!i113 0
+R15
+R16
+Exorg2
+R17
+R5
+R6
+!i122 100
+R7
+Z193 8/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/xorg2.vhd
+Z194 F/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/xorg2.vhd
+l0
+R27
+VV6C:miP5l_oAXXFV_WP4`3
+!s100 [hI[mXFH4_j16U;>U1Lfn2
+R10
+33
+Z195 !s110 1761341297
+!i10b 1
+Z196 !s108 1761341297.000000
+Z197 !s90 -reportprogress|300|-work|work|/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/xorg2.vhd|
+Z198 !s107 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/xorg2.vhd|
+!i113 0
+R15
+R16
+Adataflow
+R5
+R6
+DEx4 work 5 xorg2 0 22 V6C:miP5l_oAXXFV_WP4`3
+!i122 100
+l32
+R32
+V0<8Ik`hGa2ooIj9K`Y3Wc0
+!s100 Z6[FAPS4fBLB`F?OO<AY72
+R10
+33
+R195
+!i10b 1
+R196
+R197
+R198
+!i113 0
+R15
+R16

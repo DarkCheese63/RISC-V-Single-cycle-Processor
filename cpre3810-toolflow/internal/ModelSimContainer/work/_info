@@ -1,0 +1,287 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow
+Ebranch_comp
+Z1 w1761285370
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 8
+R0
+Z5 8proj/src/TopLevel/branch_comp.vhd
+Z6 Fproj/src/TopLevel/branch_comp.vhd
+l0
+Z7 L10 1
+Vo`@7jN2hM?z:hM9]O>?VS1
+!s100 Yh_h;7KO9XZB1XjA3GZJK0
+Z8 OL;C;2025.1_2;82
+33
+Z9 !s110 1761342791
+!i10b 1
+Z10 !s108 1761342791.000000
+Z11 !s90 -2008|-work|internal/ModelSimContainer/work|proj/src/RISCV_types.vhd|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|proj/src/RISCV_types.vhd|proj/src/TopLevel/ProgramCounter.vhd|proj/src/TopLevel/branch_comp.vhd|proj/src/TopLevel/mux3t1_N.vhd|proj/src/TopLevel/RegisterFile.vhd|proj/src/TopLevel/ALU.vhd|proj/src/TopLevel/nAdd_Sub.vhd|proj/src/TopLevel/ImmGen.vhd|proj/src/TopLevel/invg.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/decoder_5to32.vhd|proj/src/TopLevel/tb_branch_comp.vhd|proj/src/TopLevel/FetchLogic.vhd|proj/src/TopLevel/andg2.vhd|proj/src/TopLevel/N_Full_Adder.vhd|proj/src/TopLevel/ControlUnit.vhd|proj/src/TopLevel/N_Reg.vhd|proj/src/TopLevel/BarrelShifter.vhd|proj/src/TopLevel/mux2t1_N.vhd|proj/src/TopLevel/mux32t1_N.vhd|proj/src/TopLevel/InstructionMemory.vhd|proj/src/TopLevel/ALUControl.vhd|proj/src/TopLevel/mux4t1_N.vhd|proj/src/TopLevel/xorg2.vhd|proj/src/TopLevel/Full_Adder.vhd|proj/src/TopLevel/dffg.vhd|proj/src/TopLevel/org2.vhd|proj/src/TopLevel/Reg.vhd|proj/src/TopLevel/RISCV_Processor.vhd|proj/src/TopLevel/mux2t1.vhd|
+Z12 !s107 proj/src/TopLevel/mux2t1.vhd|proj/src/TopLevel/RISCV_Processor.vhd|proj/src/TopLevel/Reg.vhd|proj/src/TopLevel/org2.vhd|proj/src/TopLevel/dffg.vhd|proj/src/TopLevel/Full_Adder.vhd|proj/src/TopLevel/xorg2.vhd|proj/src/TopLevel/mux4t1_N.vhd|proj/src/TopLevel/ALUControl.vhd|proj/src/TopLevel/InstructionMemory.vhd|proj/src/TopLevel/mux32t1_N.vhd|proj/src/TopLevel/mux2t1_N.vhd|proj/src/TopLevel/BarrelShifter.vhd|proj/src/TopLevel/N_Reg.vhd|proj/src/TopLevel/ControlUnit.vhd|proj/src/TopLevel/N_Full_Adder.vhd|proj/src/TopLevel/andg2.vhd|proj/src/TopLevel/FetchLogic.vhd|proj/src/TopLevel/tb_branch_comp.vhd|proj/src/TopLevel/decoder_5to32.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/invg.vhd|proj/src/TopLevel/ImmGen.vhd|proj/src/TopLevel/nAdd_Sub.vhd|proj/src/TopLevel/ALU.vhd|proj/src/TopLevel/RegisterFile.vhd|proj/src/TopLevel/mux3t1_N.vhd|proj/src/TopLevel/branch_comp.vhd|proj/src/TopLevel/ProgramCounter.vhd|proj/src/MIPS_types.vhd|internal/testpy/tb.vhd|proj/src/RISCV_types.vhd|
+!i113 0
+Z13 o-2008 -work internal/ModelSimContainer/work
+Z14 tExplicit 1 CvgOpt 0
+Adataflow
+R2
+R3
+R4
+Z15 DEx4 work 11 branch_comp 0 22 o`@7jN2hM?z:hM9]O>?VS1
+!i122 8
+l23
+Z16 L20 62
+Z17 VL3<d;d0Y2X[YeS]6LQX4]0
+Z18 !s100 0nJ39d2mAi@^mLcHFX;ho3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Pmips_types
+R3
+R4
+!i122 8
+Z19 w1759856369
+R0
+Z20 8proj/src/MIPS_types.vhd
+Z21 Fproj/src/MIPS_types.vhd
+l0
+Z22 L15 13
+VoYfPm2QM1H8f6=eL1zcKE0
+!s100 9LKPn?UhVC15^8Xc1`G4g2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Bbody
+Z23 DPx4 work 10 mips_types 0 22 oYfPm2QM1H8f6=eL1zcKE0
+R3
+R4
+!i122 8
+l0
+Z24 L29 3
+Z25 V;G1NhTD[ei9Fo]C3ZnFL@1
+Z26 !s100 ZNa@oSJaSGzJZZUQAmX1U2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Emux3t1_n
+Z27 w1761335819
+R2
+R3
+R4
+!i122 8
+R0
+Z28 8proj/src/TopLevel/mux3t1_N.vhd
+Z29 Fproj/src/TopLevel/mux3t1_N.vhd
+l0
+R7
+VGPA<68HNF6>ianniic7090
+!s100 gc;A<MFahjd;8ncVlO55S3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Abehavioral
+R2
+R3
+R4
+Z30 DEx4 work 8 mux3t1_n 0 22 GPA<68HNF6>ianniic7090
+!i122 8
+l21
+Z31 L20 8
+Z32 VR]8dHS:]a?lS[bD^oE8>I0
+Z33 !s100 LY]8kFfL;^U;b@ER_BO:82
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Eprogramcounter
+Z34 w1761084837
+R3
+R4
+!i122 8
+R0
+Z35 8proj/src/TopLevel/ProgramCounter.vhd
+Z36 Fproj/src/TopLevel/ProgramCounter.vhd
+l0
+L15 1
+Vf:Xi2?DfeVLbD5:bm:dKj0
+!s100 UEII`b@WLTB[J_2]UcB1L1
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+Z37 DEx4 work 14 programcounter 0 22 f:Xi2?DfeVLbD5:bm:dKj0
+!i122 8
+l26
+Z38 L24 14
+Z39 VKH9HaFgeS9^EXmU0dKF3Q3
+Z40 !s100 MSc;G7^^EchFVU;O0Q3z71
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Eregisterfile
+w1761342785
+R2
+R3
+R4
+!i122 8
+R0
+8proj/src/TopLevel/RegisterFile.vhd
+Fproj/src/TopLevel/RegisterFile.vhd
+l0
+L16 1
+V4g^D7j]WOO;1@DUU?C9Dn0
+!s100 BiJaoog=QhC0fBjcQR0DP3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Priscv_types
+R3
+R4
+!i122 8
+R19
+R0
+Z41 8proj/src/RISCV_types.vhd
+Z42 Fproj/src/RISCV_types.vhd
+l0
+R22
+V2;FZF?Fh1F]>HV7zG4WNl2
+!s100 f4mVG5Ck>Fj94h>zoa_CF2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Bbody
+Z43 DPx4 work 11 riscv_types 0 22 2;FZF?Fh1F]>HV7zG4WNl2
+R3
+R4
+!i122 8
+l0
+R24
+Z44 V6lc@>eZFzbVmZRE>eR;T=2
+Z45 !s100 GDR?4:nAbmIiboG0gc@;N2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Etb
+Z46 w1760566782
+Z47 DPx3 std 3 env 0 22 g[fj8WJKOa<0Y`zWY3UD70
+Z48 DPx4 ieee 16 std_logic_textio 0 22 8]8<fKiYoHe;_IDO3kmNH2
+R3
+R4
+!i122 8
+R0
+Z49 8internal/testpy/tb.vhd
+Z50 Finternal/testpy/tb.vhd
+l0
+L24 1
+VVnzHcnmWmi<jE?5a3XOiF3
+!s100 ;QHYbWb3iZ[[A?fo=9D=X3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Amixed
+R47
+R48
+R3
+R4
+Z51 DEx4 work 2 tb 0 22 VnzHcnmWmi<jE?5a3XOiF3
+!i122 8
+l56
+Z52 L31 127
+Z53 V5[oF0n<T4Z>Xdce12QbYh2
+Z54 !s100 ^B9]<VXY=N5NKKgkQI20c3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14

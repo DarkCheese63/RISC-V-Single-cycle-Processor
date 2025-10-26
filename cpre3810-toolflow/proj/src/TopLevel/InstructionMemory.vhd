@@ -16,10 +16,10 @@ use IEEE.numeric_std.all;
 entity InstructionMemory is
 	port(
         	clk          :   in std_logic;
-		s_NextInstAddr   :   in std_logic_vector(11 downto 2); -- PC[11:2]
-		s_Inst       :   out std_logic_vector(31 downto 0) -- Instruction
-		
-
+		s_IMemAddr   :   in std_logic_vector(11 downto 2); -- PC[11:2]
+		s_Inst       :   out std_logic_vector(31 downto 0); -- Instruction
+		iInstLd	     :	 in std_logic;
+		iInstExt     :	 in std_logic_vector(31 downto 0)
 	);
 end InstructionMemory;
 architecture behavioral of InstructionMemory is

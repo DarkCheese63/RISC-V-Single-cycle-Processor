@@ -42,6 +42,7 @@ begin
         s_DMemWr <= '0';
         WBSel    <= "00";
 	BR       <= '0';
+	s_HALT <= '0';
 	o_funct3 <= funct3;
 
         case opcode is
@@ -52,6 +53,7 @@ begin
                 ImmSel  <= "001";
                 s_RegWr <= '1';
                 Bsel    <= '1';
+		WBSel <= "01";
 
             when "0000011" =>  -- Load 
                 ImmSel  <= "010";
@@ -104,13 +106,6 @@ begin
                 WBSel   <= "10";
 
             when "0010100" =>  -- HALT  (double check wanted Halt opcode in req)
-                ImmSel   <= "000";
-        	s_RegWr  <= '0';
-        	BrUn     <= '0';
-        	Asel     <= '0';
-        	Bsel     <= '0';
-        	s_DMemWr <= '0';
-        	WBSel    <= "00";
 		s_HALT   <= '1';
 
             when others =>
@@ -121,6 +116,7 @@ begin
         	Bsel     <= '0';
         	s_DMemWr <= '0';
         	WBSel    <= "00";
+		s_HALT   <= '0';
         end case;
     end process;
 

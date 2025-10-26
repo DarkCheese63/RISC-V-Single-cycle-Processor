@@ -22,7 +22,7 @@ end barrelShifter;
 
 architecture structural of barrelShifter is
 
-    component mux2to1
+    component mux2t1
         port(
             i_S  : in  std_logic;
             i_D0 : in  std_logic;
@@ -54,7 +54,7 @@ begin
 
     -- input mux
     gen_input: for i in 0 to 31 generate
-	mux_input: component mux2to1
+	mux_input: component mux2t1
 	    port map(
 		i_S => i_DIR,
 		i_D0 => i_D(i),
@@ -69,7 +69,7 @@ begin
 	signal s16_t : std_logic;
     begin
 	s16_t <= s_SHIFTIN(i-16) when (i-16) >= 0 else fill_bit;
-        mux4: mux2to1
+        mux4: mux2t1
             port map(
                 i_S  => i_SHIFT(4),
                 i_D0 => s_SHIFTIN(i),
@@ -83,7 +83,7 @@ begin
 	signal s8_t : std_logic;
     begin
 	s8_t <= s16(i-8) when i-8 >= 0 else fill_bit;
-        mux4: mux2to1
+        mux4: mux2t1
             port map(
                 i_S  => i_SHIFT(3),
                 i_D0 => s16(i),
@@ -97,7 +97,7 @@ begin
 	signal s4_t : std_logic;
     begin
 	s4_t <= s8(i-4) when i-4 >= 0 else fill_bit;
-        mux4: mux2to1
+        mux4: mux2t1
             port map(
                 i_S  => i_SHIFT(2),
                 i_D0 => s8(i),
@@ -111,7 +111,7 @@ begin
 	signal s2_t : std_logic;
     begin
 	s2_t <= s4(i-2) when i-2 >= 0 else fill_bit;
-        mux4: mux2to1
+        mux4: mux2t1
             port map(
                 i_S  => i_SHIFT(1),
                 i_D0 => s4(i),
@@ -125,7 +125,7 @@ begin
 	signal s1_t : std_logic;
     begin
 	s1_t <= s2(i-1) when i-1 >= 0 else fill_bit;
-        mux4: mux2to1
+        mux4: mux2t1
             port map(
                 i_S  => i_SHIFT(0),
                 i_D0 => s2(i),
@@ -140,7 +140,7 @@ begin
     end generate;  
 
     gen_output: for i in 0 to 31 generate
-	mux_output: component mux2to1
+	mux_output: component mux2t1
 	    port map(
 		i_S => i_DIR,
 		i_D0 => s_SHIFTOUT(i), --normal right shift

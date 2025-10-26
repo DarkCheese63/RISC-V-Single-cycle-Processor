@@ -1,0 +1,57 @@
+[N
+6
+6
+10 ADDR_WIDTH
+4
+1 N
+1
+93 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/work
+3
+9 structure
+2
+15 riscv_processor
+5
+10 DATA_WIDTH
+]
+[G
+1
+2
+3
+1
+5
+0
+0
+32
+0
+0 0
+0
+0
+]
+[G
+1
+2
+3
+1
+4
+1
+0
+32
+0
+0 0
+0
+0
+]
+[G
+1
+2
+3
+1
+6
+1
+0
+10
+0
+0 0
+0
+0
+]

@@ -21,6 +21,7 @@ entity FetchLogic is
 		imm    : in std_logic_vector(31 downto 0); -- immediate value branch/jump
 		ALUo   : in std_logic_vector(31 downto 0); -- jalr target from alu 
 		PCsrc  : in std_logic_vector(1 downto 0); -- pc select 00 = pc+4, 01 = branch, 10 = jump, 11 = jalr
+		instr_in : in std_logic_vector(31 downto 0);
 		PCP4   : out std_logic_vector(31 downto 0); --PC + 4
 		currPC : out std_logic_vector(31 downto 0); -- current pc value
 		instr  : out std_logic_vector(31 downto 0) -- fetched instruction
@@ -28,17 +29,6 @@ entity FetchLogic is
 end FetchLogic;
 
 architecture structure of FetchLogic is 
-
-	component InstructionMemory is
-		port(
-        clk          :   in std_logic;
-		s_IMemAddr   :   in std_logic_vector(11 downto 2); -- PC[11:2]
-		iInstLd	     :	 in std_logic;
-		iInstExt     :	 in std_logic_vector(31 downto 0);
-		s_Inst       :   out std_logic_vector(31 downto 0) -- Instruction
-
-	);
-	end component;
 
 	component ProgramCounter is
 		port(
@@ -86,12 +76,5 @@ architecture structure of FetchLogic is
 
 
 		-- instruction memory
-		iMEM: InstructionMemory
-			port map(
-				clk => clk,
-				s_IMemAddr => pc_val(11 downto 2),
-				iInstExt => (others => '0'),
-				iInstLd => '0',
-				s_Inst => instr
-			);
+		instr <= instr_in;
 end structure;

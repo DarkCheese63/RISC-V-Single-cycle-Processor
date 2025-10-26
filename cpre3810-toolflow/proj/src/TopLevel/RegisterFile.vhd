@@ -30,7 +30,7 @@ end RegisterFile;
 architecture regFile of RegisterFile is 
 	
 	-- component declaration --   	
-    	component N_Reg 
+    	component Reg_N 
     		generic(N : integer := 32);
     		port(
     			i_CLK : in STD_LOGIC; -- clock input - 1 bit	
@@ -96,7 +96,8 @@ architecture regFile of RegisterFile is
     	signal registers : RegArray; 
     	
     	
-    	begin 
+    	begin
+
     		
     		-- stage 1 decoder --
     		Decoder: decoder_5to32
@@ -108,8 +109,8 @@ architecture regFile of RegisterFile is
     		write_select <= write_select_raw when wr_EN = '1' else (others => '0');
     		
     		-- stage 2 registers --
-    		gen_registers: for i in 1 to 31 generate
-			REG: entity work.N_Reg
+    		gen_registers: for i in 0 to 31 generate
+			REG: Reg_N
 			    generic map(N => 32)
 			    port map(
 				i_CLK => i_CLK,

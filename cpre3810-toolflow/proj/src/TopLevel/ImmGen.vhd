@@ -27,10 +27,10 @@ architecture behavioral of ImmGen is
 	type_UJ <= (31 downto 20 => i_ImmType(31)) & i_ImmType(19 downto 12) & i_ImmType(20) & i_ImmType(30 downto 21) & '0';
 	
 	with i_ImmSel select
-	  o_Imm <= type_I when "000",
-		   type_S when "001",
-		   type_SB when "010",
-		   type_U when "011",
-		   type_UJ when "100",
+	  o_Imm <= type_I when "001",
+		   type_S when "010",
+		   type_SB when "011",
+		   type_U when "100",
+		   type_UJ when "101",
 		   (others => '0') when others;
 end behavioral;

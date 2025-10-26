@@ -28,7 +28,7 @@ begin
 	begin 
 		if rst = '1' then
 			pc_reg <= (others => '0');
-		else 
+		elsif rising_edge(clk) then
 			pc_reg <= pc_in;
 		end if;
 	end process;

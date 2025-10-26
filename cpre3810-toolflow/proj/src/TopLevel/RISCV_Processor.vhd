@@ -17,11 +17,9 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-library work;
-use work.RISCV_types.all;
 
 entity RISCV_Processor is
-  generic(N : integer := DATA_WIDTH);
+  generic(N : integer := 32; DATA_WIDTH : integer := 32; ADDR_WIDTH : integer := 10);
   port(iCLK            : in std_logic;
        iRST            : in std_logic;
        iInstLd         : in std_logic;
@@ -97,6 +95,9 @@ architecture structure of RISCV_Processor is
 
   signal s_Amux   : std_logic_vector(31 downto 0); --Amux value
   signal s_Bmux   : std_logic_vector(31 downto 0); --Bmux value
+
+  signal inst1	  : std_logic_vector(31 downto 0);
+  signal inst2    : std_logic_vector(31 downto 0);
   
   component controlUnit is 
     port(
@@ -143,6 +144,7 @@ architecture structure of RISCV_Processor is
 	imm      : in std_logic_vector(31 downto 0); -- immediate value branch/jump
 	ALUo     : in std_logic_vector(31 downto 0); -- jalr target from alu 
 	PCsrc    : in std_logic_vector(1 downto 0); -- pc select 00 = pc+4, 01 = branch, 10 = jump, 11 = jalr
+	instr_in : in std_logic_vector(31 downto 0); --instruction from imem
 	PCP4     : out std_logic_vector(31 downto 0); -- PC + 4 output
 	currPC   : out std_logic_vector(31 downto 0); -- current pc value
 	instr    : out std_logic_vector(31 downto 0) -- fetched instruction
@@ -168,7 +170,7 @@ architecture structure of RISCV_Processor is
     port(
 	i_ImmSel   : in std_logic_vector(2 downto 0);
         i_ImmType : in std_logic_vector(31 downto 0);
-	o_Imm    : out std_logic_vector(31 downto 0);
+	o_Imm    : out std_logic_vector(31 downto 0)
 	);
   end component;
 
@@ -220,18 +222,17 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
-	s_RegWrAddr <= s_Inst(11 downto 7);
-	s_ALUOut <= oALUOut;
 
   FL: FetchLogic
 	port map(
 	rst  => iRST,   
 	clk => iCLK,     
 	imm  => s_ImmOut,    
-	ALUo => oALUOut,    
+	ALUo => s_ALUOut,    
 	PCsrc => s_PCsrc,
+	instr_in => s_Inst,
 	PCP4 => s_PCP4,
-	currPC => s_NextInstAddr,
+	currPC => s_PCOut,
 	instr => s_Inst
 	);
 
@@ -263,6 +264,7 @@ begin
 	o_RS1 => s_Aout,    
 	o_RS2 => s_Bout
 	); 
+  	s_DMemData <= s_Bout; --rs2 is DMem data
 
   IG: ImmGen
 	port map(
@@ -271,7 +273,7 @@ begin
 	o_Imm => s_ImmOut   
 	);
 
-  bc: branch_compare
+  bc: branch_comp
 	port map(
 	i_A => s_Aout,
 	i_B => s_Bout,
@@ -280,36 +282,35 @@ begin
 	o_Branch => s_Branch
         );
 
-  AMUX: mux2t1
+  AMUX: mux2t1_N
 	port map(
 	i_S => s_ASel,   -- ASel       
         i_D0 => s_Aout, --RS1        
-        i_D1 => s_NextInstAddr, --PC value   
+        i_D1 => s_PCOut, --PC value   
         o_O => s_Amux --Amux output         
 	);
 
-  BMUX: mux2t1
+  BMUX: mux2t1_N
 	port map(
 	i_S => s_BSel, --BSel       
         i_D0 => s_Bout, --RS2        
         i_D1 => s_ImmOut, --Imm value  
-        o_O => s_Amux --Bmux output         
+        o_O => s_Bmux --Bmux output         
 	);
 
   Arith_Logic_Unit: ALU
         port map(
 	A => s_Amux,	 
 	B => s_Bmux, 
-	ALUCtrl => ALUSel,	 
-	Result => oALUOut,	 
+	ALUCtrl => s_ALUSel,	 
+	Result => s_ALUOut,	 
 	zero => s_ALUzero,
 	Cout => s_Ovfl
 	);
-	s_DMemAddr <= s_ALUOut; --ALUout is DMem Addr
 
-	s_DMemData <= s_Bout; --rs2 is DMem data
+	
   WRDATAMUX: mux3t1_N
-	port(
+	port map(
 	i_S => s_WBSel,
 	i_D0 => s_DMemOut,	
 	i_D1 => s_ALUOut,	
@@ -317,7 +318,11 @@ begin
 	o_O => s_RegWrData	
 	);
 
-  
+	s_RegWrAddr <= s_Inst(11 downto 7);
+	s_PCsrc <= "00"; -- force to pc+4 for addi
+	oALUOut <= s_ALUOut;
+	s_Inst <= iInstExt;
+	s_DMemAddr <= s_ALUOut; --ALUout is DMem Addr
 
 end structure;
 

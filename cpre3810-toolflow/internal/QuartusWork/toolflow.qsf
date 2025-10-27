@@ -17,7 +17,6 @@ set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/MIPS_types.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/RISCV_types.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALU.vhd"
-set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ALUControl.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/BarrelShifter.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/ControlUnit.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/FetchLogic.vhd"
@@ -43,5 +42,4 @@ set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycl
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/mux4t1_N.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/nAdd_Sub.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/org2.vhd"
-set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/tb_branch_comp.vhd"
 set_global_assignment -name VHDL_FILE "/home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/proj/src/TopLevel/xorg2.vhd"

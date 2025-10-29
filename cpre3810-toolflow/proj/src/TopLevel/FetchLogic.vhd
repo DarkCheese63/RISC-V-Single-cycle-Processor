@@ -47,6 +47,7 @@ architecture structure of FetchLogic is
 
 
 	begin
+	
 
 		-- program counter
 		PC: ProgramCounter
@@ -67,8 +68,8 @@ architecture structure of FetchLogic is
 		jump_target <= std_logic_vector(signed(pc_val) + signed(imm));
 
 		-- mux for next pc selection
-		with PCsrc select
-			next_pc <= pc_plus_4 when "00",
+			with PCsrc select
+				next_pc <= pc_plus_4 when "00",
 					   branch_target  when "01",
 					   jump_target  when "10",
 					   ALUo when "11",

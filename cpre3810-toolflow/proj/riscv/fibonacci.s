@@ -2,22 +2,11 @@
 .data
 fibs:.word   0 : 19         # "array" of words to contain fib values
 size: .word  19             # size of "array" (agrees with array declaration)
-prompt: .asciz "How many Fibonacci numbers to generate? (2 <= x <= 19)"
 .text
       la   s0, fibs        # load address of array
       la   s5, size        # load address of size variable
       lw   s5, 0(s5)      # load array size
 
-# Optional: user inputs the number of Fibonacci numbers to generate
-#pr:   la   $a0, prompt      # load address of prompt for syscall
-#      li   $v0, 4           # specify Print String service
-#      syscall               # print the prompt string
-#      li   $v0, ?????Replace_this_dummy_with_the_correct_numeric_value???????           # specify Read Integer service
-#      syscall               # Read the number. After this instruction, the number read is in $v0.
-#      bgt  $v0, $s5, pr     # Check boundary on user input -- if invalid, restart
-#      blt  $v0, $zero, pr   # Check boundary on user input -- if invalid, restart
-#      add  $s5, $v0, $zero  # transfer the number to the desired register
-      
       li   s2, 1           # 1 is the known value of first and second Fib. number
       sw   s2, 0(s0)      # F[0] = 1
       sw   s2, 4(s0)      # F[1] = F[0] = 1
@@ -66,6 +55,8 @@ out:  lw   a0, 0(t0)      # load the integer to be printed (the current Fib. num
       
       jr   ra              # return from subroutine
       
-die:
 # End of subroutine to print the numbers on one line
 ###############################################################
+
+die:
+wfi

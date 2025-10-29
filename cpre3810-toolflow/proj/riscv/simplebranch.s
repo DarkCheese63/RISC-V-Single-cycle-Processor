@@ -1,22 +1,20 @@
 main:
-	ori $s0, $zero 0x1234
+	ori s0, x0, 0x123
 	j skip
-	li $s0 0xffffffff
+	li s0, 0xffffffff
 skip:
-	ori $s1 $zero 0x1234
-	beq $s0 $s1 skip2
-	li $s0 0xffffffff
+	ori s1, x0, 0x123
+	beq s0, s1, skip2
+	li s0, 0xffffffff
 skip2:
 	jal fun
-	ori $s3 $zero 0x1234
-	
-	beq $s0, $zero exit
-	ori $s4 $zero 0x1234
+	ori s3, x0, 0x123	
+	beq s0, x0, exit
+	ori s4, x0, 0x123
 	j exit
-
 fun:
-	ori $s2 $zero 0x1234
-	jr $ra
+	ori s2, x0, 0x123
+	jr ra
 exit:
-	halt
+	wfi
 

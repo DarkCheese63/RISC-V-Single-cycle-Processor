@@ -105,7 +105,7 @@ begin
                 Bsel    <= '1';
                 WBSel   <= "10";
 
-            when "0010100" =>  -- HALT  (double check wanted Halt opcode in req)
+            when "1110011" =>  -- HALT  
 		s_HALT   <= '1';
 
             when others =>

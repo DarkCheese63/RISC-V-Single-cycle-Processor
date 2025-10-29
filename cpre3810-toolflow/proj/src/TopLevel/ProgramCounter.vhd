@@ -27,7 +27,8 @@ begin
 	process(rst,clk)
 	begin 
 		if rst = '1' then
-			pc_reg <= (others => '0');
+			--pc_reg <= (others => '0');
+			pc_reg <= x"00400000";
 		elsif rising_edge(clk) then
 			pc_reg <= pc_in;
 		end if;

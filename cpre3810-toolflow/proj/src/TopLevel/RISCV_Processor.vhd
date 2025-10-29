@@ -77,10 +77,7 @@ architecture structure of RISCV_Processor is
   signal s_Branch : std_logic;
   signal s_funct3 : std_logic_vector(2 downto 0);
 
-  --mux3t1 input
-  signal s_PCP4   : std_logic_vector(31 downto 0); --PC + 4
   signal s_ALUOut : std_logic_vector(31 downto 0); --ALU output
-  --s_DMemOut is third choice --DMEM output
 
   signal s_Aout   : std_logic_vector(31 downto 0); --rs1 out
   signal s_Bout   : std_logic_vector(31 downto 0); --rs2 out
@@ -92,6 +89,7 @@ architecture structure of RISCV_Processor is
   signal s_PCOut  : std_logic_vector(31 downto 0) := (others => '0'); -- Current PC from fetch
   signal s_ImmOut : std_logic_vector(31 downto 0);
   signal s_PCsrc  : std_logic_vector(1 downto 0);
+  signal s_IMemInst : std_logic_vector(31 downto 0);
 
   signal s_Amux   : std_logic_vector(31 downto 0); --Amux value
   signal s_Bmux   : std_logic_vector(31 downto 0); --Bmux value
@@ -196,32 +194,15 @@ begin
 
   -- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
   with iInstLd select
-    s_IMemAddr <= s_NextInstAddr when '0',
+    s_IMemAddr <= s_PCOut when '0',
       iInstAddr when others;
-
-
-  IMem: mem
-    generic map(ADDR_WIDTH => ADDR_WIDTH,
-                DATA_WIDTH => N)
-    port map(clk  => iCLK,
-             addr => s_IMemAddr(11 downto 2),
-             data => iInstExt,
-             we   => iInstLd,
-             q    => s_Inst);
   
-  DMem: mem
-    generic map(ADDR_WIDTH => ADDR_WIDTH,
-                DATA_WIDTH => N)
-    port map(clk  => iCLK,
-             addr => s_DMemAddr(11 downto 2),
-             data => s_DMemData,
-             we   => s_DMemWr,
-             q    => s_DMemOut);
 
   -- TODO: Ensure that s_Halt is connected to an output control signal produced from decoding the Halt instruction (Opcode: 01 0100)
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
+ 
 
   FL: FetchLogic
 	port map(
@@ -230,11 +211,21 @@ begin
 	imm  => s_ImmOut,    
 	ALUo => s_ALUOut,    
 	PCsrc => s_PCsrc,
-	instr_in => s_Inst,
-	PCP4 => s_PCP4,
+	instr_in => s_IMemInst,
+	PCP4 => s_NextInstAddr,
 	currPC => s_PCOut,
 	instr => s_Inst
 	);
+	
+  IMem: mem
+    generic map(ADDR_WIDTH => ADDR_WIDTH,
+                DATA_WIDTH => N)
+    port map(clk  => iCLK,
+             addr => s_ImemAddr(ADDR_WIDTH+1 downto 2),
+             data => iInstExt,
+             we   => iInstLd,
+             q    => s_IMemInst);
+
 
   CU: controlUnit
 	port map(
@@ -307,6 +298,16 @@ begin
 	zero => s_ALUzero,
 	Cout => s_Ovfl
 	);
+	s_DMemAddr <= s_ALUOut; --ALUout is DMem Addr
+	
+  DMem: mem
+    generic map(ADDR_WIDTH => ADDR_WIDTH,
+                DATA_WIDTH => N)
+    port map(clk  => iCLK,
+             addr => s_DMemAddr(11 downto 2),
+             data => s_DMemData,
+             we   => s_DMemWr,
+             q    => s_DMemOut);
 
 	
   WRDATAMUX: mux3t1_N
@@ -314,15 +315,13 @@ begin
 	i_S => s_WBSel,
 	i_D0 => s_DMemOut,	
 	i_D1 => s_ALUOut,	
-	i_D2 => s_PCP4,	
+	i_D2 => s_NextInstAddr,	
 	o_O => s_RegWrData	
 	);
 
 	s_RegWrAddr <= s_Inst(11 downto 7);
 	s_PCsrc <= "00"; -- force to pc+4 for addi
 	oALUOut <= s_ALUOut;
-	s_Inst <= iInstExt;
-	s_DMemAddr <= s_ALUOut; --ALUout is DMem Addr
 
 end structure;
 

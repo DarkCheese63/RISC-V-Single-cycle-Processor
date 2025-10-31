@@ -3,43 +3,8 @@ Reading pref.tcl
 # 2025.1_2
 
 # vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
-# Start time: 01:03:45 on Oct 31,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vsim-8611) Generating debug db.
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-4301) Memory core inferred for signal 'ram' width=32, depth=1024, type=RAM at location proj/src/TopLevel/mem.vhd:36
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -16 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -15 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -14 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -13 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -12 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -11 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -10 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -9 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -8 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -7 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -6 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -5 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -4 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -3 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -2 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(71): (vopt-1152) Index value -1 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -8 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -7 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -6 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -5 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -4 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -3 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -2 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(85): (vopt-1152) Index value -1 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(99): (vopt-1152) Index value -4 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(99): (vopt-1152) Index value -3 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(99): (vopt-1152) Index value -2 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(99): (vopt-1152) Index value -1 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(113): (vopt-1152) Index value -2 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(113): (vopt-1152) Index value -1 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Warning: ../../proj/src/TopLevel/BarrelShifter.vhd(127): (vopt-1152) Index value -1 is out of index range 31 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=32.
+# Start time: 13:07:04 on Oct 31,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2025.1_2 linux_x86_64 Apr  7 2025
 # //
@@ -85,8 +50,7 @@ Reading pref.tcl
 # Loading work.n_full_adder(structure)#1
 # Loading work.full_adder(structure)#1
 # Loading work.barrelshifter(structural)#1
-# Loading work.mux3t1_n(behavioral)#1
-# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
 # do modelsim_framework.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /tb/MyRiscv/DMem
@@ -104,12 +68,11 @@ Reading pref.tcl
 #    Time: 0 ns  Iteration: 7  Instance: /tb/MyRiscv/Arith_Logic_Unit
 # ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 7  Instance: /tb/MyRiscv/Arith_Logic_Unit
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 32 (31 downto 0). Right is 33 (0 to 32).
-#    Time: 900 ns  Iteration: 7  Process: /tb/MyRiscv/line__301 File: /home/ltolsen/cpre3810/misc/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd
-# Fatal error in Architecture structure at /home/ltolsen/cpre3810/misc/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd line 302
-# 
-# HDL call sequence:
-# Stopped at /home/ltolsen/cpre3810/misc/cpre3810-toolflow/proj/src/TopLevel/RISCV_Processor.vhd 302 Architecture structure
-# 
-# End time: 01:03:48 on Oct 31,2025, Elapsed time: 0:00:03
-# Errors: 1, Warnings: 40
+# ** Note: Data structure takes 90421128 bytes of memory
+#          Process time 2.19 seconds
+#          stop
+#    Time: 42600 ns  Iteration: 1  Instance: /tb
+# Break in Process P_DUMP_STATE at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/testpy/tb.vhd line 150
+# Stopped at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/testpy/tb.vhd line 150
+# End time: 13:07:05 on Oct 31,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 8

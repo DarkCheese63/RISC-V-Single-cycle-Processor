@@ -16,8 +16,6 @@
 8 mux4t1_n
 3
 3 rtl
-1
-77 /home/ltolsen/cpre3810/misc/cpre3810-toolflow/containers/sim_container_0/work
 12
 9 structure
 13
@@ -36,12 +34,28 @@
 10 structural
 2
 3 mem
+1
+102 /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/containers/sim_container_0/work
 10
 9 mux32t1_n
 20
 9 gCLK_HPER
 17
 9 iInstAddr
+]
+[G
+1
+6
+7
+1
+8
+1
+0
+32
+0
+0 0
+0
+0
 ]
 [G
 1
@@ -232,20 +246,6 @@
 1
 15
 12
-1
-8
-1
-0
-32
-0
-0 0
-0
-0
-]
-[G
-1
-6
-7
 1
 8
 1

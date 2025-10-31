@@ -180,13 +180,15 @@ architecture structure of RISCV_Processor is
 	);
  end component;
 
- component mux3t1_N is
-	port(
-	i_S	: in std_logic_vector(1 downto 0); --WBSel
-	i_D0	: in std_logic_vector(31 downto 0); --PCP4
-	i_D1	: in std_logic_vector(31 downto 0); --ALUout
-	i_D2	: in std_logic_vector(31 downto 0); --DMEMout
-	o_O	: out std_logic_vector(31 downto 0)
+  component mux4t1_N is 
+	generic(N : integer := 32);
+	port(		
+		i_S  : in  std_logic_vector(1 downto 0);  -- 2-bit select
+		i_D0 : in  std_logic_vector(N-1 downto 0); --dmemout
+		i_D1 : in  std_logic_vector(N-1 downto 0); --aluout
+		i_D2 : in  std_logic_vector(N-1 downto 0); --nextinstadd
+		i_D3 : in  std_logic_vector(N-1 downto 0); --immval
+		o_O  : out std_logic_vector(N-1 downto 0)
 	);
   end component;
   
@@ -202,6 +204,7 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
+  s_Ovfl <= '0';
 
   FL: FetchLogic
 	port map(
@@ -299,7 +302,7 @@ begin
 	Cout => s_Ovfl
 	);
 	 s_ALUOut_masked <= s_ALUOut when s_Inst(6 downto 0) /= "1100111" else
-		(s_ALUOut(N-1 downto 0) & '0');
+		(s_ALUOut(31 downto 1) & '0');
 	s_DMemAddr <= s_ALUOut; --ALUout is DMem Addr
 	
   DMem: mem
@@ -312,12 +315,13 @@ begin
              q    => s_DMemOut);
 
 	
-  WRDATAMUX: mux3t1_N
+  WRDATAMUX: mux4t1_N
 	port map(
 	i_S => s_WBSel,
 	i_D0 => s_DMemOut,	
 	i_D1 => s_ALUOut,	
 	i_D2 => s_NextInstAddr,	
+	i_D3 => s_ImmOut,
 	o_O => s_RegWrData	
 	);
 

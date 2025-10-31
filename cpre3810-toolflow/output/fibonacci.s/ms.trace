@@ -504,3 +504,8 @@ In clock cycle: 325
 Register Write to Reg: 0x05 Val: 0x1001004C
 In clock cycle: 326
 Register Write to Reg: 0x06 Val: 0x00000000
+In clock cycle: 328
+Register Write to Reg: 0x00 Val: 0x00400098
+In clock cycle: 329
+Register Write to Reg: 0x00 Val: 0x00400054
+Execution is stopping! Clock Cycle: 330

@@ -28,17 +28,14 @@ In clock cycle: 13
 Register Write to Reg: 0x0E Val: 0xFFFFFFFF
 In clock cycle: 14
 Register Write to Reg: 0x0F Val: 0x00000005
-Arithmetic Overflow Detected
 In clock cycle: 15
 Register Write to Reg: 0x10 Val: 0xFFFFFFFE
 In clock cycle: 16
 Register Write to Reg: 0x11 Val: 0x00000006
-Arithmetic Overflow Detected
 In clock cycle: 17
 Register Write to Reg: 0x12 Val: 0xFFFFFFFD
 In clock cycle: 18
 Register Write to Reg: 0x13 Val: 0x00000007
-Arithmetic Overflow Detected
 In clock cycle: 19
 Register Write to Reg: 0x14 Val: 0x00000023
 In clock cycle: 20

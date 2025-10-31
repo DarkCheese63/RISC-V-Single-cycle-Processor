@@ -15,7 +15,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity mux4t1_N is 
-	generic(N : integer := 16);
+	generic(N : integer := 32);
 	port(		
 		i_S  : in  std_logic_vector(1 downto 0);  -- 2-bit select
 		i_D0 : in  std_logic_vector(N-1 downto 0);

@@ -55,6 +55,7 @@ begin
             when "0010011" =>  -- I-type 
                 ImmSel  <= "001";
                 s_RegWr <= '1';
+                Asel <= '0';
                 Bsel    <= '1';
 		WBSel <= "01";
 
@@ -100,7 +101,7 @@ begin
                 s_RegWr <= '1';
                 Asel    <= '0';
                 Bsel    <= '1';
-                WBSel   <= "01";
+                WBSel   <= "11"; --selects imm write back
 
             when "0010111" =>  -- AUIPC
                 ImmSel  <= "100";

@@ -26,10 +26,12 @@ architecture dataflow of controlUnit is
     signal opcode  : std_logic_vector(6 downto 0); -- bits 6:0
     signal funct3  : std_logic_vector(2 downto 0); -- bits 14:12
     signal funct7  : std_logic;                    -- bit 30
+    signal funct12 : std_logic_vector(11 downto 0);
 begin
     opcode <= c_IN(6 downto 0);
     funct3 <= c_IN(14 downto 12);
     funct7 <= c_IN(30);
+    funct12 <= c_IN(31 downto 20);
     
     process(opcode, funct3)
     begin
@@ -48,6 +50,7 @@ begin
         case opcode is
             when "0110011" =>  -- R-type
                 s_RegWr <= '1';
+                WBSel <= "01";
 
             when "0010011" =>  -- I-type 
                 ImmSel  <= "001";
@@ -56,10 +59,11 @@ begin
 		WBSel <= "01";
 
             when "0000011" =>  -- Load 
-                ImmSel  <= "010";
+                ImmSel  <= "001";
                 s_RegWr <= '1';
+                Asel 	<= '0';
                 Bsel    <= '1';
-                WBSel   <= "01";
+                WBSel   <= "00";
 
             when "0100011" =>  -- Store 
                 ImmSel   <= "011";
@@ -67,7 +71,7 @@ begin
                 s_DMemWr <= '1';
 
             when "1100011" =>  -- Branch 
-                ImmSel <= "100";
+                ImmSel <= "011";
                 Asel   <= '1';
                 WBSel  <= "00";
 		BR     <= '1';
@@ -85,28 +89,30 @@ begin
                 WBSel   <= "10";
 
             when "1100111" =>  -- JALR
-                ImmSel  <= "110";
+                ImmSel  <= "001";
                 s_RegWr <= '1';
-                Asel    <= '1';
+                Asel    <= '0';
                 Bsel    <= '1';
                 WBSel   <= "10";
 
             when "0110111" =>  -- LUI
-                ImmSel  <= "111";
+                ImmSel  <= "100";
                 s_RegWr <= '1';
-                Asel    <= '1';
+                Asel    <= '0';
                 Bsel    <= '1';
-                WBSel   <= "10";
+                WBSel   <= "01";
 
             when "0010111" =>  -- AUIPC
-                ImmSel  <= "111";
+                ImmSel  <= "100";
                 s_RegWr <= '1';
                 Asel    <= '1';
                 Bsel    <= '1';
-                WBSel   <= "10";
+                WBSel   <= "01";
 
-            when "1110011" =>  -- HALT  
-		s_HALT   <= '1';
+            when "1110011" =>  -- HALT
+            	if funct12 = "000100000101" then
+			s_HALT   <= '1';
+		end if;
 
             when others =>
                 ImmSel   <= "000";

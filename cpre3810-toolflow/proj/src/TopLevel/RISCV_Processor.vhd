@@ -74,16 +74,15 @@ architecture structure of RISCV_Processor is
   signal s_ImmSel : std_logic_vector(2 downto 0); 	  --Type of ImmGen
   signal s_WBSel  : std_logic_vector(1 downto 0); 	  --mux3t1 selector
   signal s_BrUn   : std_logic;
-  signal s_Branch : std_logic;
   signal s_funct3 : std_logic_vector(2 downto 0);
 
   signal s_ALUOut : std_logic_vector(31 downto 0); --ALU output
+  signal s_ALUOut_masked : std_logic_vector(N-1 downto 0);
 
   signal s_Aout   : std_logic_vector(31 downto 0); --rs1 out
   signal s_Bout   : std_logic_vector(31 downto 0); --rs2 out
 
   signal s_ALUzero: std_logic; --zero from ALU
-  signal s_SetLess: std_logic; --branch comp flag
   signal s_Cout   : std_logic; --Carry out line TODO: ADD CARRYOUT
 
   signal s_PCOut  : std_logic_vector(31 downto 0) := (others => '0'); -- Current PC from fetch
@@ -94,8 +93,9 @@ architecture structure of RISCV_Processor is
   signal s_Amux   : std_logic_vector(31 downto 0); --Amux value
   signal s_Bmux   : std_logic_vector(31 downto 0); --Bmux value
 
-  signal inst1	  : std_logic_vector(31 downto 0);
-  signal inst2    : std_logic_vector(31 downto 0);
+  signal s_BranchCond : std_logic; --branch comp output
+  signal s_BranchEn : std_logic; --branch control unit signal
+  signal s_branch : std_logic; --gated branch for PCsrc
   
   component controlUnit is 
     port(
@@ -202,14 +202,13 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
- 
 
   FL: FetchLogic
 	port map(
 	rst  => iRST,   
 	clk => iCLK,     
 	imm  => s_ImmOut,    
-	ALUo => s_ALUOut,    
+	ALUo => s_ALUOut_masked,    
 	PCsrc => s_PCsrc,
 	instr_in => s_IMemInst,
 	PCP4 => s_NextInstAddr,
@@ -240,7 +239,7 @@ begin
         s_DMemWr => s_DMemWr, 
         WBSel => s_WBSel,   
 	s_HALT => s_Halt, 
-	BR => s_Branch
+	BR => s_BranchEn
 	);
 
   RF: RegisterFile
@@ -270,8 +269,9 @@ begin
 	i_B => s_Bout,
 	i_funct3 => s_funct3,
 	i_BrUn => s_BrUn,
-	o_Branch => s_Branch
+	o_Branch => s_BranchCond
         );
+        s_Branch <= s_BranchCond and s_BranchEn;
 
   AMUX: mux2t1_N
 	port map(
@@ -298,6 +298,8 @@ begin
 	zero => s_ALUzero,
 	Cout => s_Ovfl
 	);
+	 s_ALUOut_masked <= s_ALUOut when s_Inst(6 downto 0) /= "1100111" else
+		(s_ALUOut(N-1 downto 0) & '0');
 	s_DMemAddr <= s_ALUOut; --ALUout is DMem Addr
 	
   DMem: mem
@@ -320,8 +322,24 @@ begin
 	);
 
 	s_RegWrAddr <= s_Inst(11 downto 7);
-	s_PCsrc <= "00"; -- force to pc+4 for addi
 	oALUOut <= s_ALUOut;
+  process (s_Branch, s_Inst) --jal/jalr wiring
+  begin
+  	case s_Inst(6 downto 0) is
+  		when "1101111" =>
+  			s_PCsrc <= "10";
+  		when "1100111" =>
+  			s_PCsrc <= "11";
+  		when "1100011" =>
+  			if s_Branch ='1' then
+  				s_PCsrc <= "01";
+  			else
+  				s_PCsrc <= "00";
+  			end if;
+  		when others =>
+  			s_PCsrc <= "00";
+  	end case;
+  end process;
 
 end structure;
 

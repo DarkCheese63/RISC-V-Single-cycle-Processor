@@ -23,7 +23,8 @@ architecture behavioral of ImmGen is
 	type_I  <= (31 downto 12 => i_ImmType(31)) & i_ImmType(31 downto 20);
 	type_S  <= (31 downto 12 => i_ImmType(31)) & i_ImmType(31 downto 25) & i_ImmType(11 downto 7);
 	type_SB <= (31 downto 12 => i_ImmType(31)) & i_ImmType(7) & i_ImmType(30 downto 25) & i_ImmType(11 downto 8) & '0';
-	type_U  <= i_ImmType(31 downto 12) & (11 downto 0 => '0');
+	--type_U  <= i_ImmType(31 downto 12) & (11 downto 0 => '0');
+	type_U <= (31 downto 31 => i_ImmType(31)) & i_ImmType(30 downto 12) & (11 downto 0 => '0');
 	type_UJ <= (31 downto 20 => i_ImmType(31)) & i_ImmType(19 downto 12) & i_ImmType(20) & i_ImmType(30 downto 21) & '0';
 	
 	with i_ImmSel select

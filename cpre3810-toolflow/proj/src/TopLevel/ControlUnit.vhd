@@ -33,7 +33,7 @@ begin
     funct7 <= c_IN(30);
     funct12 <= c_IN(31 downto 20);
     
-    process(opcode, funct3)
+    process(opcode, funct3, funct12)
     begin
         -- default values
         ImmSel   <= "000";
@@ -110,10 +110,13 @@ begin
                 Bsel    <= '1';
                 WBSel   <= "01";
 
-            when "1110011" =>  -- HALT
-            	if funct12 = "000100000101" then
-			s_HALT   <= '1';
-		end if;
+            when "1110011" =>  
+                if funct12 = "000100000101" then
+                    s_HALT  <= '1'; -- Halt on WFI
+                elsif funct12 = "000000000000" then
+                    s_HALT <= '1'; -- Also halt on ECALL
+                end if;
+	
 
             when others =>
                 ImmSel   <= "000";
@@ -173,7 +176,6 @@ begin
                         end if;
                     when others => ALUSel <= "0000";
                 end case;
-
             when others =>
                 ALUSel <= "0000";
         end case;

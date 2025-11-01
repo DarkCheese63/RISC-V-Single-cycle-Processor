@@ -97,6 +97,8 @@ architecture structure of RISCV_Processor is
   signal s_BranchEn : std_logic; --branch control unit signal
   signal s_branch : std_logic; --gated branch for PCsrc
   
+  signal s_LoadData_Ext : std_logic_vector(N-1 downto 0);
+  
   component controlUnit is 
     port(
         c_IN     : in  std_logic_vector(31 downto 0);
@@ -318,7 +320,7 @@ begin
   WRDATAMUX: mux4t1_N
 	port map(
 	i_S => s_WBSel,
-	i_D0 => s_DMemOut,	
+	i_D0 => s_LoadData_Ext,	
 	i_D1 => s_ALUOut,	
 	i_D2 => s_NextInstAddr,	
 	i_D3 => s_ImmOut,
@@ -343,6 +345,64 @@ begin
   		when others =>
   			s_PCsrc <= "00";
   	end case;
+  end process;
+  
+  
+   process(s_DMemOut, s_ALUOut, s_Inst)
+    variable v_addr_bits : std_logic_vector(1 downto 0);
+  begin
+    v_addr_bits := s_ALUOut(1 downto 0); -- Lower 2 bits of the address
+    
+   
+    if (s_Inst(6 downto 0) = "0000011") then -- Check if it's a load
+      
+      -- If it is a load then check the funct3 bits
+      case s_Inst(14 downto 12) is 
+        
+        -- lb (sign-extend byte)
+        when "000" => 
+          case v_addr_bits is
+            when "00" => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(7)) & s_DMemOut(7 downto 0);
+            when "01" => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(15)) & s_DMemOut(15 downto 8);
+            when "10" => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(23)) & s_DMemOut(23 downto 16);
+            when others => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(31)) & s_DMemOut(31 downto 24);
+          end case;
+          
+        -- lh (sign-extend halfword)
+        when "001" => 
+          case v_addr_bits(1) is
+            when '0' => s_LoadData_Ext <= (31 downto 16 => s_DMemOut(15)) & s_DMemOut(15 downto 0);
+            when others => s_LoadData_Ext <= (31 downto 16 => s_DMemOut(31)) & s_DMemOut(31 downto 16);
+          end case;
+          
+        -- lw (load word)
+        when "010" => 
+          s_LoadData_Ext <= s_DMemOut;
+          
+        -- lbu (zero-extend byte)
+        when "100" => 
+          case v_addr_bits is
+            when "00" => s_LoadData_Ext <= x"000000" & s_DMemOut(7 downto 0);
+            when "01" => s_LoadData_Ext <= x"000000" & s_DMemOut(15 downto 8);
+            when "10" => s_LoadData_Ext <= x"000000" & s_DMemOut(23 downto 16);
+            when others => s_LoadData_Ext <= x"000000" & s_DMemOut(31 downto 24);
+          end case;
+          
+        -- lhu (zero-extend halfword)
+        when "101" => 
+          case v_addr_bits(1) is
+            when '0' => s_LoadData_Ext <= x"0000" & s_DMemOut(15 downto 0);
+            when others => s_LoadData_Ext <= x"0000" & s_DMemOut(31 downto 16);
+          end case;
+          
+        -- Default for any other funct3 
+        when others => 
+          s_LoadData_Ext <= s_DMemOut;
+      end case;
+      
+    else 
+      s_LoadData_Ext <= s_DMemOut;
+    end if;
   end process;
 
 end structure;

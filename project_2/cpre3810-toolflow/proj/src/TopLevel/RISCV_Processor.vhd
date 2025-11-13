@@ -1,18 +1,11 @@
--------------------------------------------------------------------------
--- Henry Duwe
--- Department of Electrical and Computer Engineering
--- Iowa State University
--------------------------------------------------------------------------
-
-
 -- RISCV_Processor.vhd
 -------------------------------------------------------------------------
--- DESCRIPTION: This file contains a skeleton of a RISCV_Processor  
--- implementation.
-
--- 01/29/2019 by H3::Design created.
+-- DESCRIPTION: This file contains a RISCV_Processor  
+-- implementation, integrated with IF/ID, ID/EX, EX/MEM, MEM/WB pipeline regs.
+-- Minimal pipelined datapath (software-scheduled pipeline).
+--
+-- 11/12/2025 - integrated pipeline registers and fixed top-level wiring
 -------------------------------------------------------------------------
-
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -98,7 +91,54 @@ architecture structure of RISCV_Processor is
   signal s_branch : std_logic; --gated branch for PCsrc
   
   signal s_LoadData_Ext : std_logic_vector(N-1 downto 0);
-  
+
+  --pipeline signals
+  signal s_FLUSH : std_logic;
+
+  signal s_PC_IF_ID : std_logic_vector(N-1 downto 0);
+  signal s_PCP4_IF_ID : std_logic_vector(N-1 downto 0);
+  signal s_INST_IF_ID : std_logic_vector(N-1 downto 0);
+
+  signal s_Aout_ID_EX : std_logic_vector(N-1 downto 0);   
+  signal s_Bout_ID_EX : std_logic_vector(N-1 downto 0);   
+  signal s_PC_ID_EX : std_logic_vector(N-1 downto 0);    
+  signal s_PCP4_ID_EX : std_logic_vector(N-1 downto 0);  
+  signal s_ImmOut_ID_EX : std_logic_vector(N-1 downto 0); 
+  signal s_RD_ID_EX : std_logic_vector(4 downto 0); -- rd (bits 11 downto 7)
+
+  signal s_RegWr_ID_EX : std_logic;   
+  signal s_BrUn_ID_EX : std_logic;     
+  signal s_Asel_ID_EX : std_logic;
+  signal s_Bsel_ID_EX : std_logic;     
+  signal s_funct3_ID_EX : std_logic_vector(2 downto 0);   
+  signal s_ALUSel_ID_EX : std_logic_vector(3 downto 0); 
+  signal s_DMemWr_ID_EX : std_logic;  
+  signal s_WBSel_ID_EX : std_logic_vector(1 downto 0);     
+  signal s_HALT_ID_EX : std_logic;	  
+  signal s_BR_ID_EX: std_logic;	
+
+  -- EX/MEM pipeline outputs
+  signal s_ALUOut_EX_MEM : std_logic_vector(N-1 downto 0);
+  signal s_RS2_EX_MEM    : std_logic_vector(N-1 downto 0);
+  signal s_RD_EX_MEM     : std_logic_vector(4 downto 0);
+  signal s_PCP4_EX_MEM   : std_logic_vector(N-1 downto 0);
+
+  signal s_RegWr_EX_MEM  : std_logic;
+  signal s_DMemWr_EX_MEM : std_logic;
+  signal s_WBSel_EX_MEM  : std_logic_vector(1 downto 0);
+  signal s_HALT_EX_MEM   : std_logic;
+
+  -- MEM/WB pipeline outputs
+  signal s_RegWr_MEM_WB  : std_logic;
+  signal s_WBSel_MEM_WB  : std_logic_vector(1 downto 0);
+  signal s_HALT_MEM_WB   : std_logic;
+
+  signal s_ALUOut_MEM_WB : std_logic_vector(N-1 downto 0);
+  signal s_PCP4_MEM_WB   : std_logic_vector(N-1 downto 0);
+  signal s_SDMemOut_MEM_WB : std_logic_vector(N-1 downto 0);
+  signal s_ImmOut_MEM_WB   : std_logic_vector(N-1 downto 0);
+  signal s_RD_MEM_WB     : std_logic_vector(4 downto 0);
+
   component controlUnit is 
     port(
         c_IN     : in  std_logic_vector(31 downto 0);
@@ -193,6 +233,139 @@ architecture structure of RISCV_Processor is
 		o_O  : out std_logic_vector(N-1 downto 0)
 	);
   end component;
+
+  component Reg_IF_ID is 
+	generic(N : integer := 32);
+	port(
+		i_CLK : in STD_LOGIC; -- clock input - 1 bit	
+		i_RST : in STD_LOGIC; -- reset input - 1 bit
+		i_WE  : in STD_LOGIC; -- Write Enable
+
+		-- control value
+		i_FLUSH  : in STD_LOGIC; -- dictates NOP: this is a control val on the pipeline reg
+
+		-- dataflow values
+		i_PC     : in std_logic_vector(N-1 downto 0);
+		i_PCP4   : in std_logic_vector(N-1 downto 0); 
+		i_INST   : in std_logic_vector(N-1 downto 0);
+
+		o_PC     : out std_logic_vector(N-1 downto 0); --outputs of PC and INST regs
+		o_PCP4   : out std_logic_vector(N-1 downto 0);
+		o_INST   : out std_logic_vector(N-1 downto 0)
+	);
+  end component;
+
+  component Reg_ID_EX is 
+	generic(N : integer := 32);
+	port(
+		i_CLK   : in STD_LOGIC; -- clock input - 1 bit	
+		i_RST   : in STD_LOGIC; -- reset input - 1 bit
+		i_WE    : in STD_LOGIC;
+		i_FLUSH : in STD_LOGIC;
+
+		-- Signals from control unit, all are here except ImmSel since it is used in ID stage right when its produced
+		i_SRegWr   : in std_logic_vector(0 downto 0); 
+		i_BrUn     : in std_logic_vector(0 downto 0);
+		i_Asel     : in std_logic_vector(0 downto 0);
+		i_Bsel     : in std_logic_vector(0 downto 0);
+		i_funct3   : in std_logic_vector(2 downto 0);
+		i_ALUSel   : in std_logic_vector(3 downto 0);
+		i_SDMemWr  : in std_logic_vector(0 downto 0);
+		i_WBSel    : in std_logic_vector(1 downto 0);
+		i_SHALT	   : in std_logic_vector(0 downto 0);
+		i_BR	   : in std_logic_vector(0 downto 0); 
+
+		-- dataflow values
+		i_RS1    : in std_logic_vector(N-1 downto 0); 
+		i_RS2    : in std_logic_vector(N-1 downto 0);
+		i_PC     : in std_logic_vector(N-1 downto 0);
+		i_PCP4   : in std_logic_vector(N-1 downto 0);
+		i_ImmOut : in std_logic_vector(N-1 downto 0); 
+		i_RD	 : in std_logic_vector(4 downto 0);
+
+		o_RS1    : out std_logic_vector(N-1 downto 0); 
+		o_RS2    : out std_logic_vector(N-1 downto 0);
+		o_PC     : out std_logic_vector(N-1 downto 0);
+		o_PCP4   : out std_logic_vector(N-1 downto 0);
+		o_ImmOut : out std_logic_vector(N-1 downto 0);
+		o_RD	 : out std_logic_vector(4 downto 0);
+		
+		o_SRegWr   : out std_logic;
+		o_BrUn     : out std_logic;
+		o_Asel     : out std_logic;
+		o_Bsel     : out std_logic;
+		o_funct3   : out std_logic_vector(2 downto 0);
+		o_ALUSel   : out std_logic_vector(3 downto 0);
+		o_SDMemWr  : out std_logic;
+		o_WBSel    : out std_logic_vector(1 downto 0);
+		o_SHALT	   : out std_logic;
+		o_BR	   : out std_logic 
+	);
+  end component;
+
+  component Reg_EX_MEM is 
+	generic(N : integer := 32);
+	port(
+		i_CLK : in STD_LOGIC; -- clock input - 1 bit	
+		i_RST : in STD_LOGIC; -- reset input - 1 bit
+		i_WE  : in STD_LOGIC;
+		
+		--control signals from previous stage ID/EX
+		i_SRegWr   : in std_logic_vector(0 downto 0); 
+		i_SDMemWr  : in std_logic_vector(0 downto 0);
+		i_WBSel    : in std_logic_vector(1 downto 0);
+		i_SHALT	   : in std_logic_vector(0 downto 0);
+
+		--dataflow values
+		i_ALU : in std_logic_vector(N-1 downto 0); 
+		i_RS2    : in std_logic_vector(N-1 downto 0);
+		i_RD	 : in std_logic_vector(4 downto 0);
+		i_PCP4   : in std_logic_vector(N-1 downto 0);
+		
+		--outputs
+		o_SRegWr   : out std_logic; 
+		o_SDMemWr  : out std_logic;
+		o_WBSel    : out std_logic_vector(1 downto 0);
+		o_SHALT	   : out std_logic;
+
+		o_ALU    : out std_logic_vector(N-1 downto 0); --outputs of A and B from reg file and immgen regs
+		o_RS2    : out std_logic_vector(N-1 downto 0);
+		o_RD     : out std_logic_vector(4 downto 0);
+		o_PCP4   : out std_logic_vector(N-1 downto 0)
+	);
+  end component;
+
+  component Reg_MEM_WB is 
+	generic(N : integer := 32);
+	port(
+		i_CLK : in STD_LOGIC; -- clock input - 1 bit	
+		i_RST : in STD_LOGIC; -- reset input - 1 bit
+		i_WE  : in STD_LOGIC;
+		
+		--control signals from previous stage EX/MEM
+		i_SRegWr   : in std_logic_vector(0 downto 0); 
+		i_WBSel    : in std_logic_vector(1 downto 0);
+		i_SHALT	   : in std_logic_vector(0 downto 0);
+
+		--dataflow values
+		i_ALU : in std_logic_vector(N-1 downto 0); 
+		i_PCP4   : in std_logic_vector(N-1 downto 0);
+		i_SDMemOut : in std_logic_vector(N-1 downto 0);
+		i_ImmOut : in std_logic_vector(N-1 downto 0);
+		i_RD	 : in std_logic_vector(4 downto 0);
+		
+		--outputs
+		o_SRegWr   : out std_logic; 
+		o_WBSel    : out std_logic_vector(1 downto 0);
+		o_SHALT	   : out std_logic;
+
+		o_ALU    : out std_logic_vector(N-1 downto 0); 
+		o_PCP4   : out std_logic_vector(N-1 downto 0);
+		o_SDMemOut : out std_logic_vector(N-1 downto 0);
+		o_ImmOut : out std_logic_vector(N-1 downto 0);
+		o_RD     : out std_logic_vector(4 downto 0)
+	);
+end component;
   
 begin
 
@@ -210,10 +383,10 @@ begin
 
   FL: FetchLogic
 	port map(
-	rst  => iRST,   
-	clk => iCLK,     
-	imm  => s_ImmOut,    
-	ALUo => s_ALUOut_masked,    
+	rst  => iRST,
+	clk => iCLK,
+	imm  => s_ImmOut,
+	ALUo => s_ALUOut_masked,
 	PCsrc => s_PCsrc,
 	instr_in => s_IMemInst,
 	PCP4 => s_NextInstAddr,
@@ -225,88 +398,193 @@ begin
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
     port map(clk  => iCLK,
-             addr => s_ImemAddr(ADDR_WIDTH+1 downto 2),
+             addr => s_IMemAddr(ADDR_WIDTH+1 downto 2),
              data => iInstExt,
              we   => iInstLd,
              q    => s_IMemInst);
 
+  -- IF/ID pipeline register: flush from s_FLUSH, always write (i_WE => '1')
+  IF_ID: Reg_IF_ID
+    generic map(N => N)
+	port map(
+		i_CLK => iCLK,
+		i_RST => iRST,
+		i_WE  => '1',
+		i_FLUSH => s_FLUSH,
+		i_PC => s_PCOut,
+		i_PCP4 => s_NextInstAddr,
+		i_INST => s_Inst,
+		o_PC => s_PC_IF_ID,
+		o_PCP4 => s_PCP4_IF_ID,
+		o_INST => s_INST_IF_ID
+	);
 
   CU: controlUnit
 	port map(
-	c_IN => s_Inst,     
+		c_IN => s_INST_IF_ID,
         ImmSel => s_ImmSel,
         s_RegWr => s_RegWr,
         BrUn => s_BrUn,
-        Asel => s_Asel,   
-        Bsel => s_Bsel,   
-	o_funct3 => s_funct3,
-        ALUSel => s_ALUSel,   
-        s_DMemWr => s_DMemWr, 
-        WBSel => s_WBSel,   
-	s_HALT => s_Halt, 
-	BR => s_BranchEn
+        Asel => s_Asel,
+        Bsel => s_Bsel,
+		o_funct3 => s_funct3,
+        ALUSel => s_ALUSel,
+        s_DMemWr => s_DMemWr_ID_EX, -- note: CU output fed into ID/EX via Reg_ID_EX after staging
+        WBSel => s_WBSel,
+		s_HALT => s_Halt,
+		BR => s_BranchEn
 	);
 
   RF: RegisterFile
 	port map(
-	i_RD1 => s_RegWrAddr,   
-	i_RS1 => s_Inst(19 downto 15),  
-	i_RS2 => s_Inst(24 downto 20),   
-	i_RST => iRST,    
-	i_CLK => iCLK,    
-	wr_EN => s_RegWr,
-	wr_DATA => s_RegWrData, 
-	o_RS1 => s_Aout,    
-	o_RS2 => s_Bout
-	); 
-  	s_DMemData <= s_Bout; --rs2 is DMem data
+		i_RD1 => s_RegWrAddr,
+		i_RS1 => s_INST_IF_ID(19 downto 15),
+		i_RS2 => s_INST_IF_ID(24 downto 20),
+		i_RST => iRST,
+		i_CLK => iCLK,
+		wr_EN => s_RegWr,
+		wr_DATA => s_RegWrData,
+		o_RS1 => s_Aout,
+		o_RS2 => s_Bout
+	);
 
   IG: ImmGen
 	port map(
-	i_ImmSel => s_ImmSel,
-        i_ImmType => s_Inst, 
-	o_Imm => s_ImmOut   
+		i_ImmSel => s_ImmSel,
+        i_ImmType => s_INST_IF_ID,
+		o_Imm => s_ImmOut
 	);
 
+  -- next stage ID/EX (flush controlled by s_FLUSH), store control + data values
+  ID_EX: Reg_ID_EX
+     generic map(N => N)
+	port map(
+		i_CLK => iCLK,
+		i_RST => iRST,
+		i_WE => '1',
+		i_FLUSH => s_FLUSH,
+
+		-- Signals from control unit
+		i_SRegWr => (others => s_RegWr),
+		i_BrUn => (others => s_BrUn),
+		i_Asel => (others => s_Asel),
+		i_Bsel => (others => s_Bsel),
+		i_funct3 => s_funct3,
+		i_ALUSel => s_ALUSel,
+		i_SDMemWr => (others => s_DMemWr_ID_EX),
+		i_WBSel => s_WBSel,
+		i_SHALT => (others => s_Halt),
+		i_BR => (others => s_BranchEn),
+
+		-- dataflow values
+		i_RS1 => s_Aout,
+		i_RS2 => s_Bout,
+		i_PC => s_PC_IF_ID,
+		i_PCP4 => s_PCP4_IF_ID,
+		i_ImmOut => s_ImmOut,
+		i_RD => s_INST_IF_ID(11 downto 7),
+
+		o_RS1 => s_Aout_ID_EX,
+		o_RS2 => s_Bout_ID_EX,
+		o_PC => s_PC_ID_EX,
+		o_PCP4 => s_PCP4_ID_EX,
+		o_ImmOut => s_ImmOut_ID_EX,
+		o_RD => s_RD_ID_EX,
+
+		o_SRegWr => s_RegWr_ID_EX,
+		o_BrUn => s_BrUn_ID_EX,
+		o_Asel => s_Asel_ID_EX,
+		o_Bsel => s_Bsel_ID_EX,
+		o_funct3 => s_funct3_ID_EX,
+		o_ALUSel => s_ALUSel_ID_EX,
+		o_SDMemWr => s_DMemWr_ID_EX,
+		o_WBSel => s_WBSel_ID_EX,
+		o_SHALT => s_HALT_ID_EX,
+		o_BR => s_BR_ID_EX
+	);
+
+  -- Branch compare in EX stage: uses ID/EX values
   bc: branch_comp
 	port map(
-	i_A => s_Aout,
-	i_B => s_Bout,
-	i_funct3 => s_funct3,
-	i_BrUn => s_BrUn,
-	o_Branch => s_BranchCond
+		i_A => s_Aout_ID_EX,
+		i_B => s_Bout_ID_EX,
+		i_funct3 => s_funct3_ID_EX,
+		i_BrUn => s_BrUn_ID_EX,
+		o_Branch => s_BranchCond
         );
-        s_Branch <= s_BranchCond and s_BranchEn;
+  -- gated branch
+  s_branch <= s_BranchCond and s_BR_ID_EX;
+  -- flush the earlier stages when a branch is taken in EX
+  s_FLUSH <= s_branch;
 
+  -- ALU operand muxes and ALU
   AMUX: mux2t1_N
 	port map(
-	i_S => s_ASel,   -- ASel       
-        i_D0 => s_Aout, --RS1        
-        i_D1 => s_PCOut, --PC value   
-        o_O => s_Amux --Amux output         
+		i_S => s_Asel_ID_EX,
+        i_D0 => s_Aout_ID_EX,
+        i_D1 => s_PC_ID_EX,
+        o_O => s_Amux
 	);
 
   BMUX: mux2t1_N
 	port map(
-	i_S => s_BSel, --BSel       
-        i_D0 => s_Bout, --RS2        
-        i_D1 => s_ImmOut, --Imm value  
-        o_O => s_Bmux --Bmux output         
+		i_S => s_Bsel_ID_EX,
+        i_D0 => s_Bout_ID_EX,
+        i_D1 => s_ImmOut_ID_EX,
+        o_O => s_Bmux
 	);
 
   Arith_Logic_Unit: ALU
         port map(
-	A => s_Amux,	 
-	B => s_Bmux, 
-	ALUCtrl => s_ALUSel,	 
-	Result => s_ALUOut,	 
-	zero => s_ALUzero,
-	Cout => s_Ovfl
+		A => s_Amux,
+		B => s_Bmux,
+		ALUCtrl => s_ALUSel_ID_EX,
+		Result => s_ALUOut,
+		zero => s_ALUzero,
+		Cout => s_Ovfl
 	);
-	 s_ALUOut_masked <= s_ALUOut when s_Inst(6 downto 0) /= "1100111" else
+
+  -- jalr mask special-case: if instruction is jalr (1100111), mask bit0
+  s_ALUOut_masked <= s_ALUOut when s_Inst(6 downto 0) /= "1100111" else
 		(s_ALUOut(31 downto 1) & '0');
-	s_DMemAddr <= s_ALUOut; --ALUout is DMem Addr
-	
+
+  -- EX/MEM pipeline register: latch ALU result, rs2, rd, PCP4 and control signals
+  EX_MEM: Reg_EX_MEM
+    generic map(N => N)
+	port map(
+		i_CLK => iCLK,
+		i_RST => iRST,
+		i_WE => '1',
+
+		-- control signals from ID/EX
+		i_SRegWr => (others => s_RegWr_ID_EX),
+		i_SDMemWr => (others => s_DMemWr_ID_EX),
+		i_WBSel => s_WBSel_ID_EX,
+		i_SHALT => (others => s_HALT_ID_EX),
+
+		-- dataflow values
+		i_ALU => s_ALUOut,
+		i_RS2 => s_Bout_ID_EX,
+		i_RD => s_RD_ID_EX,
+		i_PCP4 => s_PCP4_ID_EX,
+
+		-- outputs (to MEM stage)
+		o_SRegWr => s_RegWr_EX_MEM,
+		o_SDMemWr => s_DMemWr_EX_MEM,
+		o_WBSel => s_WBSel_EX_MEM,
+		o_SHALT => s_HALT_EX_MEM,
+
+		o_ALU => s_ALUOut_EX_MEM,
+		o_RS2 => s_RS2_EX_MEM,
+		o_RD => s_RD_EX_MEM,
+		o_PCP4 => s_PCP4_EX_MEM
+	);
+
+  -- Drive data memory address/data/we from EX/MEM pipeline outputs
+  s_DMemAddr <= s_ALUOut_EX_MEM; --ALUout is DMem Addr
+  s_DMemData <= s_RS2_EX_MEM; --rs2 is DMem data
+  s_DMemWr <= s_DMemWr_EX_MEM; -- write enable for data memory (from EX/MEM)
+
   DMem: mem
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
@@ -316,28 +594,65 @@ begin
              we   => s_DMemWr,
              q    => s_DMemOut);
 
-	
-  WRDATAMUX: mux4t1_N
+  -- MEM/WB pipeline register: latch outputs from MEM stage for WB
+  MEM_WB: Reg_MEM_WB
+    generic map(N => N)
 	port map(
-	i_S => s_WBSel,
-	i_D0 => s_LoadData_Ext,	
-	i_D1 => s_ALUOut,	
-	i_D2 => s_NextInstAddr,	
-	i_D3 => s_ImmOut,
-	o_O => s_RegWrData	
+		i_CLK => iCLK,
+		i_RST => iRST,
+		i_WE => '1',
+
+		i_SRegWr => (others => s_RegWr_EX_MEM),
+		i_WBSel => s_WBSel_EX_MEM,
+		i_SHALT => (others => s_HALT_EX_MEM),
+
+		-- dataflow values from MEM stage
+		i_ALU => s_ALUOut_EX_MEM,
+		i_PCP4 => s_PCP4_EX_MEM,
+		i_SDMemOut => s_DMemOut,
+		i_ImmOut => s_ImmOut_ID_EX, -- propagate imm (if needed in WB)
+		i_RD => s_RD_EX_MEM,
+
+		-- outputs
+		o_SRegWr => s_RegWr_MEM_WB,
+		o_WBSel => s_WBSel_MEM_WB,
+		o_SHALT => s_HALT_MEM_WB,
+
+		o_ALU => s_ALUOut_MEM_WB,
+		o_PCP4 => s_PCP4_MEM_WB,
+		o_SDMemOut => s_SDMemOut_MEM_WB,
+		o_ImmOut => s_ImmOut_MEM_WB,
+		o_RD => s_RD_MEM_WB
 	);
 
-	s_RegWrAddr <= s_Inst(11 downto 7);
-	oALUOut <= s_ALUOut;
-  process (s_Branch, s_Inst) --jal/jalr wiring
+  -- Writeback data mux (use MEM/WB stage outputs)
+  WRDATAMUX: mux4t1_N
+	port map(
+		i_S => s_WBSel_MEM_WB,
+		i_D0 => s_LoadData_Ext,	-- load-extended data from DMem (computed below)
+		i_D1 => s_ALUOut_MEM_WB,	-- ALU result
+		i_D2 => s_PCP4_MEM_WB,	-- PCP4 (for jal)
+		i_D3 => s_ImmOut_MEM_WB,	-- immediate (if needed)
+		o_O => s_RegWrData
+	);
+
+  -- register-file write address & enable come from MEM/WB
+  s_RegWrAddr <= s_RD_MEM_WB;
+  s_RegWr <= s_RegWr_MEM_WB;
+
+  -- output ALU for debugging / required output port
+  oALUOut <= s_ALUOut;
+
+  -- PC select logic (jal/jalr/branch)
+  process (s_branch, s_Inst)
   begin
   	case s_Inst(6 downto 0) is
-  		when "1101111" =>
+  		when "1101111" => -- jal
   			s_PCsrc <= "10";
-  		when "1100111" =>
+  		when "1100111" => -- jalr
   			s_PCsrc <= "11";
-  		when "1100011" =>
-  			if s_Branch ='1' then
+  		when "1100011" => -- branch
+  			if s_branch = '1' then
   				s_PCsrc <= "01";
   			else
   				s_PCsrc <= "00";
@@ -347,63 +662,60 @@ begin
   	end case;
   end process;
   
-  
-   process(s_DMemOut, s_ALUOut, s_Inst)
+  -- Load data extension logic (operating on MEM stage data)
+  process(s_SDMemOut_MEM_WB, s_ALUOut_MEM_WB, s_INST)
     variable v_addr_bits : std_logic_vector(1 downto 0);
   begin
-    v_addr_bits := s_ALUOut(1 downto 0); -- Lower 2 bits of the address
+    v_addr_bits := s_ALUOut_MEM_WB(1 downto 0); -- Lower 2 bits of the address (use ALU result from MEM/WB)
     
-   
-    if (s_Inst(6 downto 0) = "0000011") then -- Check if it's a load
-      
+    if (s_INST_IF_ID(6 downto 0) = "0000011") then -- Check if it was a load (we use IF/ID inst to check load opcode for simplicity)
       -- If it is a load then check the funct3 bits
-      case s_Inst(14 downto 12) is 
+      case s_INST_IF_ID(14 downto 12) is 
         
         -- lb (sign-extend byte)
         when "000" => 
           case v_addr_bits is
-            when "00" => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(7)) & s_DMemOut(7 downto 0);
-            when "01" => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(15)) & s_DMemOut(15 downto 8);
-            when "10" => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(23)) & s_DMemOut(23 downto 16);
-            when others => s_LoadData_Ext <= (31 downto 8 => s_DMemOut(31)) & s_DMemOut(31 downto 24);
+            when "00" => s_LoadData_Ext <= (31 downto 8 => s_SDMemOut_MEM_WB(7)) & s_SDMemOut_MEM_WB(7 downto 0);
+            when "01" => s_LoadData_Ext <= (31 downto 8 => s_SDMemOut_MEM_WB(15)) & s_SDMemOut_MEM_WB(15 downto 8);
+            when "10" => s_LoadData_Ext <= (31 downto 8 => s_SDMemOut_MEM_WB(23)) & s_SDMemOut_MEM_WB(23 downto 16);
+            when others => s_LoadData_Ext <= (31 downto 8 => s_SDMemOut_MEM_WB(31)) & s_SDMemOut_MEM_WB(31 downto 24);
           end case;
           
         -- lh (sign-extend halfword)
         when "001" => 
           case v_addr_bits(1) is
-            when '0' => s_LoadData_Ext <= (31 downto 16 => s_DMemOut(15)) & s_DMemOut(15 downto 0);
-            when others => s_LoadData_Ext <= (31 downto 16 => s_DMemOut(31)) & s_DMemOut(31 downto 16);
+            when '0' => s_LoadData_Ext <= (31 downto 16 => s_SDMemOut_MEM_WB(15)) & s_SDMemOut_MEM_WB(15 downto 0);
+            when others => s_LoadData_Ext <= (31 downto 16 => s_SDMemOut_MEM_WB(31)) & s_SDMemOut_MEM_WB(31 downto 16);
           end case;
           
         -- lw (load word)
         when "010" => 
-          s_LoadData_Ext <= s_DMemOut;
+          s_LoadData_Ext <= s_SDMemOut_MEM_WB;
           
         -- lbu (zero-extend byte)
         when "100" => 
           case v_addr_bits is
-            when "00" => s_LoadData_Ext <= x"000000" & s_DMemOut(7 downto 0);
-            when "01" => s_LoadData_Ext <= x"000000" & s_DMemOut(15 downto 8);
-            when "10" => s_LoadData_Ext <= x"000000" & s_DMemOut(23 downto 16);
-            when others => s_LoadData_Ext <= x"000000" & s_DMemOut(31 downto 24);
+            when "00" => s_LoadData_Ext <= x"000000" & s_SDMemOut_MEM_WB(7 downto 0);
+            when "01" => s_LoadData_Ext <= x"000000" & s_SDMemOut_MEM_WB(15 downto 8);
+            when "10" => s_LoadData_Ext <= x"000000" & s_SDMemOut_MEM_WB(23 downto 16);
+            when others => s_LoadData_Ext <= x"000000" & s_SDMemOut_MEM_WB(31 downto 24);
           end case;
           
         -- lhu (zero-extend halfword)
         when "101" => 
           case v_addr_bits(1) is
-            when '0' => s_LoadData_Ext <= x"0000" & s_DMemOut(15 downto 0);
-            when others => s_LoadData_Ext <= x"0000" & s_DMemOut(31 downto 16);
+            when '0' => s_LoadData_Ext <= x"0000" & s_SDMemOut_MEM_WB(15 downto 0);
+            when others => s_LoadData_Ext <= x"0000" & s_SDMemOut_MEM_WB(31 downto 16);
           end case;
           
         -- Default for any other funct3 
         when others => 
-          s_LoadData_Ext <= s_DMemOut;
+          s_LoadData_Ext <= s_SDMemOut_MEM_WB;
       end case;
       
     else 
-      s_LoadData_Ext <= s_DMemOut;
+      s_LoadData_Ext <= s_SDMemOut_MEM_WB;
     end if;
   end process;
 
 end structure;
-

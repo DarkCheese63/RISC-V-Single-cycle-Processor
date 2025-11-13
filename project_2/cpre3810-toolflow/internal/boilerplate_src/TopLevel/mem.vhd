@@ -1,4 +1,3 @@
-
 -- Quartus Prime VHDL Template
 -- Single-port RAM with single read/write address
 

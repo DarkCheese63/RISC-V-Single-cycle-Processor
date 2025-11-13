@@ -3,7 +3,7 @@ Reading pref.tcl
 # 2025.1_2
 
 # vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
-# Start time: 14:50:21 on Nov 11,2025
+# Start time: 00:20:27 on Nov 13,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
@@ -34,11 +34,12 @@ Reading pref.tcl
 # Loading work.fetchlogic(structure)#1
 # Loading work.programcounter(behavioral)#1
 # Loading work.mem(rtl)#1
+# Loading work.reg_if_id(structure)#1
+# Loading work.reg_n(structure)#1
+# Loading work.dffg(mixed)#1
 # Loading work.controlunit(dataflow)#1
 # Loading work.registerfile(regfile)#1
 # Loading work.decoder_5to32(behavior)#1
-# Loading work.reg_n(structure)#1
-# Loading work.dffg(mixed)#1
 # Loading work.mux32t1_n(structural)#1
 # Loading work.mux4t1_n(structural)#1
 # Loading work.mux2t1(structural)#1
@@ -47,6 +48,12 @@ Reading pref.tcl
 # Loading work.org2(dataflow)#1
 # Loading work.mux2t1_n(structural)#1
 # Loading work.immgen(behavioral)#1
+# Loading work.reg_id_ex(structure)#1
+# Loading work.reg_n(structure)#2
+# Loading work.reg_n(structure)#3
+# Loading work.reg_n(structure)#4
+# Loading work.reg_n(structure)#5
+# Loading work.reg_n(structure)#6
 # Loading work.branch_comp(dataflow)#1
 # Loading work.alu(structural)#1
 # Loading work.xorg2(dataflow)#1
@@ -54,6 +61,8 @@ Reading pref.tcl
 # Loading work.n_full_adder(structure)#1
 # Loading work.full_adder(structure)#1
 # Loading work.barrelshifter(structural)#1
+# Loading work.reg_ex_mem(structure)#1
+# Loading work.reg_mem_wb(structure)#1
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # do modelsim_framework.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -66,17 +75,11 @@ Reading pref.tcl
 #    Time: 0 ns  Iteration: 0  Instance: /tb/MyRiscv/RF/Decoder
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /tb/MyRiscv/IMem
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 4  Instance: /tb/MyRiscv/DMem
-# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 7  Instance: /tb/MyRiscv/Arith_Logic_Unit
-# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 7  Instance: /tb/MyRiscv/Arith_Logic_Unit
-# ** Note: Data structure takes 92817440 bytes of memory
-#          Process time 0.24 seconds
+# ** Note: Data structure takes 96770520 bytes of memory
+#          Process time 0.55 seconds
 #          stop
-#    Time: 240 ns  Iteration: 1  Instance: /tb
-# Break in Process P_DUMP_STATE at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/testpy/tb.vhd line 150
-# Stopped at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/cpre3810-toolflow/internal/testpy/tb.vhd line 150
-# End time: 14:50:23 on Nov 11,2025, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 9
+#    Time: 260 ns  Iteration: 1  Instance: /tb
+# Break in Process P_DUMP_STATE at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/project_2/cpre3810-toolflow/internal/testpy/tb.vhd line 150
+# Stopped at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/project_2/cpre3810-toolflow/internal/testpy/tb.vhd line 150
+# End time: 00:20:31 on Nov 13,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 6

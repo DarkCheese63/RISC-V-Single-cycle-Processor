@@ -58,8 +58,7 @@ architecture structure of RISCV_Processor is
           q            : out std_logic_vector((DATA_WIDTH -1) downto 0));
     end component;
 
-  -- TODO: You may add any additional signals or components your implementation 
-  --       requires below this comment
+  -- TODO: You may add any additional signals or components your implementation requires below this comment
   -- control signals
   signal s_ALUSel : std_logic_vector(3 downto 0); --ALU control
   signal s_ASel   : std_logic;     		  --select Amux
@@ -114,7 +113,8 @@ architecture structure of RISCV_Processor is
   signal s_ALUSel_ID_EX : std_logic_vector(3 downto 0); 
   signal s_DMemWr_ID_EX : std_logic;  
   signal s_WBSel_ID_EX : std_logic_vector(1 downto 0);     
-  signal s_HALT_ID_EX : std_logic;	  
+  signal s_HALT_ID_EX : std_logic;
+  signal s_END : std_logic; --this is to replace the initial wire due to the toolflow being tied into s_Halt for termination, this prevents early termination and allows for termination in the WB stage	  
   signal s_BR_ID_EX: std_logic;	
 
   -- EX/MEM pipeline outputs
@@ -421,18 +421,18 @@ begin
 
   CU: controlUnit
 	port map(
-		c_IN => s_INST_IF_ID,
+	c_IN => s_INST_IF_ID,
         ImmSel => s_ImmSel,
         s_RegWr => s_RegWr,
         BrUn => s_BrUn,
         Asel => s_Asel,
         Bsel => s_Bsel,
-		o_funct3 => s_funct3,
+	o_funct3 => s_funct3,
         ALUSel => s_ALUSel,
-        s_DMemWr => s_DMemWr_ID_EX, -- note: CU output fed into ID/EX via Reg_ID_EX after staging
+        s_DMemWr => s_DMemWr, 
         WBSel => s_WBSel,
-		s_HALT => s_Halt,
-		BR => s_BranchEn
+	s_HALT => s_END,
+	BR => s_BranchEn
 	);
 
   RF: RegisterFile
@@ -442,7 +442,7 @@ begin
 		i_RS2 => s_INST_IF_ID(24 downto 20),
 		i_RST => iRST,
 		i_CLK => iCLK,
-		wr_EN => s_RegWr,
+		wr_EN => s_RegWr_MEM_WB,
 		wr_DATA => s_RegWrData,
 		o_RS1 => s_Aout,
 		o_RS2 => s_Bout
@@ -450,12 +450,12 @@ begin
 
   IG: ImmGen
 	port map(
-		i_ImmSel => s_ImmSel,
+	i_ImmSel => s_ImmSel,
         i_ImmType => s_INST_IF_ID,
-		o_Imm => s_ImmOut
+	o_Imm => s_ImmOut
 	);
 
-  -- next stage ID/EX (flush controlled by s_FLUSH), store control + data values
+  -- ID/EX pipeline register:
   ID_EX: Reg_ID_EX
      generic map(N => N)
 	port map(
@@ -471,9 +471,9 @@ begin
 		i_Bsel => (others => s_Bsel),
 		i_funct3 => s_funct3,
 		i_ALUSel => s_ALUSel,
-		i_SDMemWr => (others => s_DMemWr_ID_EX),
+		i_SDMemWr => (others => s_DMemWr),
 		i_WBSel => s_WBSel,
-		i_SHALT => (others => s_Halt),
+		i_SHALT => (others => s_END),
 		i_BR => (others => s_BranchEn),
 
 		-- dataflow values
@@ -520,7 +520,7 @@ begin
   -- ALU operand muxes and ALU
   AMUX: mux2t1_N
 	port map(
-		i_S => s_Asel_ID_EX,
+	i_S => s_Asel_ID_EX,
         i_D0 => s_Aout_ID_EX,
         i_D1 => s_PC_ID_EX,
         o_O => s_Amux
@@ -528,7 +528,7 @@ begin
 
   BMUX: mux2t1_N
 	port map(
-		i_S => s_Bsel_ID_EX,
+	i_S => s_Bsel_ID_EX,
         i_D0 => s_Bout_ID_EX,
         i_D1 => s_ImmOut_ID_EX,
         o_O => s_Bmux
@@ -548,7 +548,7 @@ begin
   s_ALUOut_masked <= s_ALUOut when s_Inst(6 downto 0) /= "1100111" else
 		(s_ALUOut(31 downto 1) & '0');
 
-  -- EX/MEM pipeline register: latch ALU result, rs2, rd, PCP4 and control signals
+  -- EX/MEM pipeline register: 
   EX_MEM: Reg_EX_MEM
     generic map(N => N)
 	port map(
@@ -579,7 +579,6 @@ begin
 		o_RD => s_RD_EX_MEM,
 		o_PCP4 => s_PCP4_EX_MEM
 	);
-
   -- Drive data memory address/data/we from EX/MEM pipeline outputs
   s_DMemAddr <= s_ALUOut_EX_MEM; --ALUout is DMem Addr
   s_DMemData <= s_RS2_EX_MEM; --rs2 is DMem data
@@ -594,7 +593,7 @@ begin
              we   => s_DMemWr,
              q    => s_DMemOut);
 
-  -- MEM/WB pipeline register: latch outputs from MEM stage for WB
+  -- MEM/WB pipeline register: 
   MEM_WB: Reg_MEM_WB
     generic map(N => N)
 	port map(
@@ -610,7 +609,7 @@ begin
 		i_ALU => s_ALUOut_EX_MEM,
 		i_PCP4 => s_PCP4_EX_MEM,
 		i_SDMemOut => s_DMemOut,
-		i_ImmOut => s_ImmOut_ID_EX, -- propagate imm (if needed in WB)
+		i_ImmOut => s_ImmOut_ID_EX, 
 		i_RD => s_RD_EX_MEM,
 
 		-- outputs
@@ -624,48 +623,12 @@ begin
 		o_ImmOut => s_ImmOut_MEM_WB,
 		o_RD => s_RD_MEM_WB
 	);
-
-  -- Writeback data mux (use MEM/WB stage outputs)
-  WRDATAMUX: mux4t1_N
-	port map(
-		i_S => s_WBSel_MEM_WB,
-		i_D0 => s_LoadData_Ext,	-- load-extended data from DMem (computed below)
-		i_D1 => s_ALUOut_MEM_WB,	-- ALU result
-		i_D2 => s_PCP4_MEM_WB,	-- PCP4 (for jal)
-		i_D3 => s_ImmOut_MEM_WB,	-- immediate (if needed)
-		o_O => s_RegWrData
-	);
-
-  -- register-file write address & enable come from MEM/WB
-  s_RegWrAddr <= s_RD_MEM_WB;
-  s_RegWr <= s_RegWr_MEM_WB;
-
-  -- output ALU for debugging / required output port
-  oALUOut <= s_ALUOut;
-
-  -- PC select logic (jal/jalr/branch)
-  process (s_branch, s_Inst)
-  begin
-  	case s_Inst(6 downto 0) is
-  		when "1101111" => -- jal
-  			s_PCsrc <= "10";
-  		when "1100111" => -- jalr
-  			s_PCsrc <= "11";
-  		when "1100011" => -- branch
-  			if s_branch = '1' then
-  				s_PCsrc <= "01";
-  			else
-  				s_PCsrc <= "00";
-  			end if;
-  		when others =>
-  			s_PCsrc <= "00";
-  	end case;
-  end process;
-  
+	
   -- Load data extension logic (operating on MEM stage data)
   process(s_SDMemOut_MEM_WB, s_ALUOut_MEM_WB, s_INST)
     variable v_addr_bits : std_logic_vector(1 downto 0);
   begin
+  
     v_addr_bits := s_ALUOut_MEM_WB(1 downto 0); -- Lower 2 bits of the address (use ALU result from MEM/WB)
     
     if (s_INST_IF_ID(6 downto 0) = "0000011") then -- Check if it was a load (we use IF/ID inst to check load opcode for simplicity)
@@ -714,8 +677,45 @@ begin
       end case;
       
     else 
-      s_LoadData_Ext <= s_SDMemOut_MEM_WB;
+        s_LoadData_Ext <= (others => '0');
     end if;
+  end process;
+
+  -- Writeback data mux (use MEM/WB stage outputs)
+  WRDATAMUX: mux4t1_N
+	port map(
+		i_S => s_WBSel_MEM_WB,
+		i_D0 => s_LoadData_Ext,	-- load-extended data from DMem (computed below)
+		i_D1 => s_ALUOut_MEM_WB,	-- ALU result
+		i_D2 => s_PCP4_MEM_WB,	-- PCP4 (for jal)
+		i_D3 => s_ImmOut_MEM_WB,	-- immediate 
+		o_O => s_RegWrData --feeds into reg file data
+	);
+	s_RegWrAddr <= s_RD_MEM_WB;
+
+  --halt in wb stage
+  s_Halt <= s_HALT_EX_MEM;
+
+  -- output ALU for toolflow
+  oALUOut <= s_ALUOut;
+
+  -- PC select logic (jal/jalr/branch)
+  process (s_branch, s_Inst)
+  begin
+  	case s_Inst(6 downto 0) is
+  		when "1101111" => -- jal
+  			s_PCsrc <= "10";
+  		when "1100111" => -- jalr
+  			s_PCsrc <= "11";
+  		when "1100011" => -- branch
+  			if s_branch = '1' then
+  				s_PCsrc <= "01";
+  			else
+  				s_PCsrc <= "00";
+  			end if;
+  		when others =>
+  			s_PCsrc <= "00";
+  	end case;
   end process;
 
 end structure;

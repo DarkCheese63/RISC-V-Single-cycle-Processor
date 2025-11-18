@@ -114,7 +114,7 @@ begin
                 if funct12 = "000100000101" then
                     s_HALT  <= '1'; -- Halt on WFI
                 elsif funct12 = "000000000000" then
-                    s_HALT <= '1'; -- Also halt on ECALL
+                    --s_HALT <= '1'; -- Also halt on ECALL
                 end if;
 	
 

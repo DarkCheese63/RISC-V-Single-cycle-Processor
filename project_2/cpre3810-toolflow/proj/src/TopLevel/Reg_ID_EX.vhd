@@ -40,6 +40,7 @@ entity Reg_ID_EX is
 		i_PCP4   : in std_logic_vector(N-1 downto 0);
 		i_ImmOut : in std_logic_vector(N-1 downto 0); 
 		i_RD	 : in std_logic_vector(4 downto 0);
+		i_INST   : in std_logic_vector(N-1 downto 0);
 
 		o_RS1    : out std_logic_vector(N-1 downto 0); 
 		o_RS2    : out std_logic_vector(N-1 downto 0);
@@ -47,6 +48,7 @@ entity Reg_ID_EX is
 		o_PCP4   : out std_logic_vector(N-1 downto 0);
 		o_ImmOut : out std_logic_vector(N-1 downto 0);
 		o_RD	 : out std_logic_vector(4 downto 0);
+		o_INST   : out std_logic_vector(N-1 downto 0);
 		
 		o_SRegWr   : out std_logic;
 		o_BrUn     : out std_logic;
@@ -92,6 +94,7 @@ architecture structure of Reg_ID_EX is
   signal q_WBSel    : std_logic_vector(1 downto 0);
   signal q_SHALT    : std_logic_vector(0 downto 0);
   signal q_BR	    : std_logic_vector(0 downto 0);
+  signal q_INST     : std_logic_vector(N-1 downto 0);
 
  --signals for flush control
   signal s_RS1    : std_logic_vector(N-1 downto 0); 
@@ -100,6 +103,7 @@ architecture structure of Reg_ID_EX is
   signal s_PCP4   : std_logic_vector(N-1 downto 0);
   signal s_ImmOut : std_logic_vector(N-1 downto 0); 
   signal s_RD	  : std_logic_vector(4 downto 0);
+  signal s_INST   : std_logic_vector(N-1 downto 0);
   
   signal s_SRegWr   : std_logic_vector(0 downto 0); --correct sizes
   signal s_BrUn     : std_logic_vector(0 downto 0);
@@ -121,6 +125,7 @@ begin
   s_PCP4 <= (others => '0') when i_FLUSH = '1' else i_PCP4;
   s_ImmOut <= (others => '0') when i_FLUSH = '1' else i_ImmOut;
   s_RD <= (others => '0') when i_FLUSH = '1' else i_RD;
+  s_INST <= (others => '0') when i_FLUSH = '1' else i_INST;
   
   s_SRegWr <= (others => '0') when i_FLUSH = '1' else i_SRegWr;
   s_BrUn <= (others => '0') when i_FLUSH = '1' else i_BrUn;
@@ -189,6 +194,16 @@ begin
 		o_Q   => q_RD  --output data
 	);
 	
+  INST_REG: Reg_N
+	port map(
+		i_CLK => i_CLK,
+		i_RST => i_RST,
+		i_WE  => i_WE,
+		i_D   => s_INST,--inst value
+		o_Q   => q_INST --output data
+	);
+	
+	
   -- regs for control values
   SREGWR: Reg_N generic map(N => 1) port map(i_CLK => i_CLK,i_RST => i_RST,i_WE  => i_WE,i_D => s_SRegWr, o_Q => q_SRegWr);
   BRUN: Reg_N generic map(N => 1) port map(i_CLK => i_CLK,i_RST => i_RST,i_WE  => i_WE, i_D => s_BrUn, o_Q => q_BrUn);
@@ -208,6 +223,7 @@ begin
   o_PCP4 <= q_PCP4;
   o_ImmOut <= q_ImmOut;
   o_RD <= q_RD;
+  o_INST <= q_INST;
   
   o_SRegWr <= q_SRegWr(0);
   o_BrUn <= q_BrUn(0);

@@ -31,11 +31,13 @@ entity Reg_MEM_WB is
 		i_SDMemOut : in std_logic_vector(N-1 downto 0);
 		i_ImmOut : in std_logic_vector(N-1 downto 0);
 		i_RD	 : in std_logic_vector(4 downto 0);
+		i_INST   : in std_logic_vector(N-1 downto 0);
 		
 		--outputs
 		o_SRegWr   : out std_logic; 
 		o_WBSel    : out std_logic_vector(1 downto 0);
 		o_SHALT	   : out std_logic;
+		o_INST   : out std_logic_vector(N-1 downto 0);
 
 		o_ALU    : out std_logic_vector(N-1 downto 0); 
 		o_PCP4   : out std_logic_vector(N-1 downto 0);
@@ -64,6 +66,7 @@ architecture structure of Reg_MEM_WB is
   signal q_PCP4     : std_logic_vector(N-1 downto 0);
   signal q_ImmOut   : std_logic_vector(N-1 downto 0);
   signal q_RD	  : std_logic_vector(4 downto 0);
+  signal q_INST     : std_logic_vector(N-1 downto 0);
   
   --internal control value signals
   signal q_SRegWr   : std_logic_vector(0 downto 0);
@@ -118,6 +121,15 @@ begin
 		i_D   => i_RD, --ImmOut value
 		o_Q   => q_RD  --output data
 	);
+
+  INST_REG: Reg_N
+	port map(
+		i_CLK => i_CLK,
+		i_RST => i_RST,
+		i_WE  => i_WE,
+		i_D   => i_INST,--inst value
+		o_Q   => q_INST --output data
+	);
 	
   --control value regs
   SREGWR: Reg_N generic map(N => 1) port map(i_CLK => i_CLK,i_RST => i_RST,i_WE  => i_WE,i_D => i_SRegWr, o_Q => q_SRegWr);
@@ -131,6 +143,7 @@ begin
   o_SDMemOut <= q_SDMemOut;
   o_ImmOut <= q_ImmOut;
   o_RD <= q_RD;
+  o_INST <= q_INST;
   
   o_SRegWr <= q_SRegWr(0);
   o_WBSel <= q_WBSel;

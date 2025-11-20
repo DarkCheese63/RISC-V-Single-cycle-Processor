@@ -1,5 +1,5 @@
 QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
-Start time: 16:07:55 on Nov 18,2025
+Start time: 23:16:01 on Nov 19,2025
 vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd internal/testpy/tb.vhd proj/src/RISCV_types.vhd proj/src/TopLevel/mux2t1_N.vhd proj/src/TopLevel/RISCV_Processor.vhd proj/src/TopLevel/mux32t1_N.vhd proj/src/TopLevel/FetchLogic.vhd proj/src/TopLevel/ProgramCounter.vhd proj/src/TopLevel/xorg2.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/invg.vhd proj/src/TopLevel/nAdd_Sub.vhd proj/src/TopLevel/BarrelShifter.vhd proj/src/TopLevel/ImmGen.vhd proj/src/TopLevel/ALU.vhd proj/src/TopLevel/mux3t1_N.vhd proj/src/TopLevel/Reg_MEM_WB.vhd proj/src/TopLevel/decoder_5to32.vhd proj/src/TopLevel/Reg_N.vhd proj/src/TopLevel/Reg.vhd proj/src/TopLevel/Full_Adder.vhd proj/src/TopLevel/mux2t1.vhd proj/src/TopLevel/RegisterFile.vhd proj/src/TopLevel/ControlUnit.vhd proj/src/TopLevel/Reg_EX_MEM.vhd proj/src/TopLevel/andg2.vhd proj/src/TopLevel/mux4t1_N.vhd proj/src/TopLevel/dffg.vhd proj/src/TopLevel/org2.vhd proj/src/TopLevel/Reg_IF_ID.vhd proj/src/TopLevel/Reg_ID_EX.vhd proj/src/TopLevel/N_Full_Adder.vhd proj/src/TopLevel/branch_comp.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -77,5 +77,5 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd intern
 -- Compiling architecture structure of N_Full_Adder
 -- Compiling entity branch_comp
 -- Compiling architecture dataflow of branch_comp
-End time: 16:07:56 on Nov 18,2025, Elapsed time: 0:00:01
+End time: 23:16:01 on Nov 19,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 2

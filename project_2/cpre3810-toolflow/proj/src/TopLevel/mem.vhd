@@ -33,7 +33,7 @@ architecture rtl of mem is
 
 	-- Declare the RAM signal and specify a default value.	Quartus Prime
 	-- will load the provided memory initialization file (.mif).
-	signal ram : memory_t := (others => (others => '0'));
+	signal ram : memory_t;
 
 begin
 

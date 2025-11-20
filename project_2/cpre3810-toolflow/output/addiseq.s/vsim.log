@@ -3,7 +3,7 @@ Reading pref.tcl
 # 2025.1_2
 
 # vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
-# Start time: 16:07:57 on Nov 18,2025
+# Start time: 23:16:02 on Nov 19,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
@@ -75,5 +75,17 @@ Reading pref.tcl
 #    Time: 0 ns  Iteration: 0  Instance: /tb/MyRiscv/RF/Decoder
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /tb/MyRiscv/IMem
-# End time: 16:08:03 on Nov 18,2025, Elapsed time: 0:00:06
-# Errors: 0, Warnings: 6
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 280 ns  Iteration: 6  Instance: /tb/MyRiscv/Arith_Logic_Unit
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 280 ns  Iteration: 6  Instance: /tb/MyRiscv/Arith_Logic_Unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 300 ns  Iteration: 5  Instance: /tb/MyRiscv/DMem
+# ** Note: Data structure takes 97431120 bytes of memory
+#          Process time 0.47 seconds
+#          stop
+#    Time: 320 ns  Iteration: 1  Instance: /tb
+# Break in Process P_DUMP_STATE at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/project_2/cpre3810-toolflow/internal/testpy/tb.vhd line 150
+# Stopped at /home/ltolsen/cpre3810/RISC-V-Single-cycle-Processor/project_2/cpre3810-toolflow/internal/testpy/tb.vhd line 150
+# End time: 23:16:05 on Nov 19,2025, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 9

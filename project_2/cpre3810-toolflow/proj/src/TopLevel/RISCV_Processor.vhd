@@ -97,6 +97,8 @@ architecture structure of RISCV_Processor is
   signal s_PC_IF_ID : std_logic_vector(N-1 downto 0);
   signal s_PCP4_IF_ID : std_logic_vector(N-1 downto 0);
   signal s_INST_IF_ID : std_logic_vector(N-1 downto 0);
+  
+  signal s_RegWr_ID : std_logic; --temp signal to carry reg wr en to idex pipeline to avoid multiple drivers
 
   signal s_Aout_ID_EX : std_logic_vector(N-1 downto 0);   
   signal s_Bout_ID_EX : std_logic_vector(N-1 downto 0);   
@@ -104,6 +106,7 @@ architecture structure of RISCV_Processor is
   signal s_PCP4_ID_EX : std_logic_vector(N-1 downto 0);  
   signal s_ImmOut_ID_EX : std_logic_vector(N-1 downto 0); 
   signal s_RD_ID_EX : std_logic_vector(4 downto 0); -- rd (bits 11 downto 7)
+  signal s_INST_ID_EX : std_logic_vector(N-1 downto 0);
 
   signal s_RegWr_ID_EX : std_logic;   
   signal s_BrUn_ID_EX : std_logic;     
@@ -122,6 +125,8 @@ architecture structure of RISCV_Processor is
   signal s_RS2_EX_MEM    : std_logic_vector(N-1 downto 0);
   signal s_RD_EX_MEM     : std_logic_vector(4 downto 0);
   signal s_PCP4_EX_MEM   : std_logic_vector(N-1 downto 0);
+  signal s_INST_EX_MEM : std_logic_vector(N-1 downto 0);
+  signal s_ImmOut_EX_MEM : std_logic_vector(N-1 downto 0);
 
   signal s_RegWr_EX_MEM  : std_logic;
   signal s_DMemWr_EX_MEM : std_logic;
@@ -132,6 +137,7 @@ architecture structure of RISCV_Processor is
   signal s_RegWr_MEM_WB  : std_logic;
   signal s_WBSel_MEM_WB  : std_logic_vector(1 downto 0);
   signal s_HALT_MEM_WB   : std_logic;
+  signal s_INST_MEM_WB : std_logic_vector(N-1 downto 0);
 
   signal s_ALUOut_MEM_WB : std_logic_vector(N-1 downto 0);
   signal s_PCP4_MEM_WB   : std_logic_vector(N-1 downto 0);
@@ -282,6 +288,7 @@ architecture structure of RISCV_Processor is
 		i_PCP4   : in std_logic_vector(N-1 downto 0);
 		i_ImmOut : in std_logic_vector(N-1 downto 0); 
 		i_RD	 : in std_logic_vector(4 downto 0);
+		i_INST   : in std_logic_vector(N-1 downto 0);
 
 		o_RS1    : out std_logic_vector(N-1 downto 0); 
 		o_RS2    : out std_logic_vector(N-1 downto 0);
@@ -289,6 +296,7 @@ architecture structure of RISCV_Processor is
 		o_PCP4   : out std_logic_vector(N-1 downto 0);
 		o_ImmOut : out std_logic_vector(N-1 downto 0);
 		o_RD	 : out std_logic_vector(4 downto 0);
+		o_INST   : out std_logic_vector(N-1 downto 0);
 		
 		o_SRegWr   : out std_logic;
 		o_BrUn     : out std_logic;
@@ -315,6 +323,8 @@ architecture structure of RISCV_Processor is
 		i_SDMemWr  : in std_logic_vector(0 downto 0);
 		i_WBSel    : in std_logic_vector(1 downto 0);
 		i_SHALT	   : in std_logic_vector(0 downto 0);
+		i_INST   : in std_logic_vector(N-1 downto 0);
+		i_ImmOut : in std_logic_vector(N-1 downto 0); 
 
 		--dataflow values
 		i_ALU : in std_logic_vector(N-1 downto 0); 
@@ -327,6 +337,8 @@ architecture structure of RISCV_Processor is
 		o_SDMemWr  : out std_logic;
 		o_WBSel    : out std_logic_vector(1 downto 0);
 		o_SHALT	   : out std_logic;
+		o_INST   : out std_logic_vector(N-1 downto 0);
+		o_ImmOut : out std_logic_vector(N-1 downto 0);
 
 		o_ALU    : out std_logic_vector(N-1 downto 0); --outputs of A and B from reg file and immgen regs
 		o_RS2    : out std_logic_vector(N-1 downto 0);
@@ -353,11 +365,13 @@ architecture structure of RISCV_Processor is
 		i_SDMemOut : in std_logic_vector(N-1 downto 0);
 		i_ImmOut : in std_logic_vector(N-1 downto 0);
 		i_RD	 : in std_logic_vector(4 downto 0);
+		i_INST   : in std_logic_vector(N-1 downto 0);
 		
 		--outputs
 		o_SRegWr   : out std_logic; 
 		o_WBSel    : out std_logic_vector(1 downto 0);
 		o_SHALT	   : out std_logic;
+		o_INST   : out std_logic_vector(N-1 downto 0);
 
 		o_ALU    : out std_logic_vector(N-1 downto 0); 
 		o_PCP4   : out std_logic_vector(N-1 downto 0);
@@ -379,13 +393,12 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
-  s_Ovfl <= '0';
 
   FL: FetchLogic
 	port map(
 	rst  => iRST,
 	clk => iCLK,
-	imm  => s_ImmOut,
+	imm  => s_ImmOut_ID_EX,
 	ALUo => s_ALUOut_masked,
 	PCsrc => s_PCsrc,
 	instr_in => s_IMemInst,
@@ -410,7 +423,8 @@ begin
 		i_CLK => iCLK,
 		i_RST => iRST,
 		i_WE  => '1',
-		i_FLUSH => s_FLUSH,
+		i_FLUSH => '0',
+		--will use flush with hardware
 		i_PC => s_PCOut,
 		i_PCP4 => s_NextInstAddr,
 		i_INST => s_Inst,
@@ -423,7 +437,7 @@ begin
 	port map(
 	c_IN => s_INST_IF_ID,
         ImmSel => s_ImmSel,
-        s_RegWr => s_RegWr,
+        s_RegWr => s_RegWr_ID,
         BrUn => s_BrUn,
         Asel => s_Asel,
         Bsel => s_Bsel,
@@ -441,8 +455,8 @@ begin
 		i_RS1 => s_INST_IF_ID(19 downto 15),
 		i_RS2 => s_INST_IF_ID(24 downto 20),
 		i_RST => iRST,
-		i_CLK => iCLK,
-		wr_EN => s_RegWr_MEM_WB,
+		i_CLK => not iCLK,
+		wr_EN => s_RegWr,
 		wr_DATA => s_RegWrData,
 		o_RS1 => s_Aout,
 		o_RS2 => s_Bout
@@ -462,10 +476,11 @@ begin
 		i_CLK => iCLK,
 		i_RST => iRST,
 		i_WE => '1',
-		i_FLUSH => s_FLUSH,
+		i_FLUSH => '0',
+		--will use s_FLUSH when flushing on hardware
 
 		-- Signals from control unit
-		i_SRegWr => (others => s_RegWr),
+		i_SRegWr => (others => s_RegWr_ID),
 		i_BrUn => (others => s_BrUn),
 		i_Asel => (others => s_Asel),
 		i_Bsel => (others => s_Bsel),
@@ -483,6 +498,7 @@ begin
 		i_PCP4 => s_PCP4_IF_ID,
 		i_ImmOut => s_ImmOut,
 		i_RD => s_INST_IF_ID(11 downto 7),
+		i_INST => s_INST_IF_ID,
 
 		o_RS1 => s_Aout_ID_EX,
 		o_RS2 => s_Bout_ID_EX,
@@ -490,6 +506,7 @@ begin
 		o_PCP4 => s_PCP4_ID_EX,
 		o_ImmOut => s_ImmOut_ID_EX,
 		o_RD => s_RD_ID_EX,
+		o_INST => s_INST_ID_EX,
 
 		o_SRegWr => s_RegWr_ID_EX,
 		o_BrUn => s_BrUn_ID_EX,
@@ -512,10 +529,33 @@ begin
 		i_BrUn => s_BrUn_ID_EX,
 		o_Branch => s_BranchCond
         );
-  -- gated branch
+  -- branch
   s_branch <= s_BranchCond and s_BR_ID_EX;
-  -- flush the earlier stages when a branch is taken in EX
-  s_FLUSH <= s_branch;
+  
+    -- PC select logic (jal/jalr/branch)
+  process (s_branch, s_INST_ID_EX)
+  begin
+  	s_PCsrc <= "00";
+  	case s_INST_ID_EX(6 downto 0) is
+  		when "1101111" => -- jal
+  			s_PCsrc <= "10";
+  		when "1100111" => -- jalr
+  			s_PCsrc <= "11";
+  		when "1100011" => -- branch
+  			if s_branch = '1' then
+  				s_PCsrc <= "01";
+  			else
+  				s_PCsrc <= "00";
+  			end if;
+  		when others =>
+  			s_PCsrc <= "00";
+  	end case;
+  end process;
+  
+    -- flush the earlier stages when a branch is taken in EX, implemented in hardware
+  --s_FLUSH <= '1' when s_PCsrc = "10" else
+ -- 	     '1' when s_PCsrc = "11" else
+ -- 	     '0';
 
   -- ALU operand muxes and ALU
   AMUX: mux2t1_N
@@ -543,9 +583,13 @@ begin
 		zero => s_ALUzero,
 		Cout => s_Ovfl
 	);
+	 s_Ovfl <= '0';
+	   -- output ALU for toolflow
+  	oALUOut <= s_ALUOut;
+
 
   -- jalr mask special-case: if instruction is jalr (1100111), mask bit0
-  s_ALUOut_masked <= s_ALUOut when s_Inst(6 downto 0) /= "1100111" else
+  s_ALUOut_masked <= s_ALUOut when s_INST_ID_EX(6 downto 0) /= "1100111" else
 		(s_ALUOut(31 downto 1) & '0');
 
   -- EX/MEM pipeline register: 
@@ -567,12 +611,16 @@ begin
 		i_RS2 => s_Bout_ID_EX,
 		i_RD => s_RD_ID_EX,
 		i_PCP4 => s_PCP4_ID_EX,
+		i_INST => s_INST_ID_EX,
+		i_ImmOut => s_ImmOut_ID_EX,
 
 		-- outputs (to MEM stage)
 		o_SRegWr => s_RegWr_EX_MEM,
 		o_SDMemWr => s_DMemWr_EX_MEM,
 		o_WBSel => s_WBSel_EX_MEM,
 		o_SHALT => s_HALT_EX_MEM,
+		o_INST => s_INST_EX_MEM,
+		o_ImmOut => s_ImmOut_EX_MEM,
 
 		o_ALU => s_ALUOut_EX_MEM,
 		o_RS2 => s_RS2_EX_MEM,
@@ -609,13 +657,15 @@ begin
 		i_ALU => s_ALUOut_EX_MEM,
 		i_PCP4 => s_PCP4_EX_MEM,
 		i_SDMemOut => s_DMemOut,
-		i_ImmOut => s_ImmOut_ID_EX, 
+		i_ImmOut => s_ImmOut_EX_MEM, 
 		i_RD => s_RD_EX_MEM,
+		i_INST => s_INST_EX_MEM,
 
 		-- outputs
 		o_SRegWr => s_RegWr_MEM_WB,
 		o_WBSel => s_WBSel_MEM_WB,
 		o_SHALT => s_HALT_MEM_WB,
+		o_INST => s_INST_MEM_WB,
 
 		o_ALU => s_ALUOut_MEM_WB,
 		o_PCP4 => s_PCP4_MEM_WB,
@@ -625,15 +675,15 @@ begin
 	);
 	
   -- Load data extension logic (operating on MEM stage data)
-  process(s_SDMemOut_MEM_WB, s_ALUOut_MEM_WB, s_INST)
+  process(s_SDMemOut_MEM_WB, s_ALUOut_MEM_WB, s_INST_MEM_WB)
     variable v_addr_bits : std_logic_vector(1 downto 0);
   begin
   
     v_addr_bits := s_ALUOut_MEM_WB(1 downto 0); -- Lower 2 bits of the address (use ALU result from MEM/WB)
     
-    if (s_INST_IF_ID(6 downto 0) = "0000011") then -- Check if it was a load (we use IF/ID inst to check load opcode for simplicity)
+    if (s_INST_MEM_WB(6 downto 0) = "0000011") then 
       -- If it is a load then check the funct3 bits
-      case s_INST_IF_ID(14 downto 12) is 
+      case s_INST_MEM_WB(14 downto 12) is 
         
         -- lb (sign-extend byte)
         when "000" => 
@@ -692,30 +742,11 @@ begin
 		o_O => s_RegWrData --feeds into reg file data
 	);
 	s_RegWrAddr <= s_RD_MEM_WB;
+	s_RegWr <= s_RegWr_MEM_WB;
+
 
   --halt in wb stage
-  s_Halt <= s_HALT_EX_MEM;
+  s_Halt <= s_HALT_MEM_WB;
 
-  -- output ALU for toolflow
-  oALUOut <= s_ALUOut;
-
-  -- PC select logic (jal/jalr/branch)
-  process (s_branch, s_Inst)
-  begin
-  	case s_Inst(6 downto 0) is
-  		when "1101111" => -- jal
-  			s_PCsrc <= "10";
-  		when "1100111" => -- jalr
-  			s_PCsrc <= "11";
-  		when "1100011" => -- branch
-  			if s_branch = '1' then
-  				s_PCsrc <= "01";
-  			else
-  				s_PCsrc <= "00";
-  			end if;
-  		when others =>
-  			s_PCsrc <= "00";
-  	end case;
-  end process;
-
+  
 end structure;

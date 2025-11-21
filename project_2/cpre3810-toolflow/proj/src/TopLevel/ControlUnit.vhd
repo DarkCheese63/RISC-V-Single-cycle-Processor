@@ -67,7 +67,7 @@ begin
                 WBSel   <= "00";
 
             when "0100011" =>  -- Store 
-                ImmSel   <= "011";
+                ImmSel   <= "010";
                 Bsel     <= '1';
                 s_DMemWr <= '1';
 

@@ -1,0 +1,1530 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2025.1_2 2025.04, Apr  7 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files
+T_opt
+!s110 1764030541
+Vo54X2^HSkGWi4HAK`@EZn2
+04 13 10 work tb_reg_ex_mem behavioral 1
+=1-000ae431a4f1-6924f84d-722f2-cc7b
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OL;O;2025.1_2;82
+R1
+Ealu
+Z2 w1763754865
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 210
+R1
+Z6 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ALU.vhd
+Z7 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ALU.vhd
+l0
+L18 1
+VfDlF=E@J8fE_cGUhX5HEZ0
+!s100 JJT2PUDiTg;BLmEV`U=z^1
+Z8 OL;C;2025.1_2;82
+33
+Z9 !s110 1764207788
+!i10b 1
+Z10 !s108 1764207788.000000
+Z11 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ALU.vhd|
+Z12 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ALU.vhd|
+!i113 0
+Z13 o-work work
+Z14 tExplicit 1 NoCoverage 1 CvgOpt 0
+Astructural
+R3
+R4
+R5
+DEx4 work 3 alu 0 22 fDlF=E@J8fE_cGUhX5HEZ0
+!i122 210
+l94
+L29 208
+VWRRa=<XPDG99z=_4zXd=52
+!s100 bdje5QgPK@Ye4YH6zM5^Q3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Eandg2
+R2
+R4
+R5
+!i122 211
+R1
+Z15 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/andg2.vhd
+Z16 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/andg2.vhd
+l0
+Z17 L23 1
+VzJ2OoPJ=<ja2?Y;OcjQk;3
+!s100 YT?bGzEmcFo:DlnoC^B4_0
+R8
+33
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/andg2.vhd|
+Z19 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/andg2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R4
+R5
+DEx4 work 5 andg2 0 22 zJ2OoPJ=<ja2?Y;OcjQk;3
+!i122 211
+l32
+Z20 L31 6
+V3oa1[>iDZj;2zVo:oz1>e2
+!s100 I`@Z@UBObS]<7m8bPgKUS1
+R8
+33
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 0
+R13
+R14
+Ebarrelshifter
+R2
+R4
+R5
+!i122 212
+R1
+Z21 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/BarrelShifter.vhd
+Z22 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/BarrelShifter.vhd
+l0
+L14 1
+V8Rk9^2X4oD3?;k`izO6241
+!s100 l@80A5eWb4`:M>b@9Nijc1
+R8
+33
+R9
+!i10b 1
+R10
+Z23 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/BarrelShifter.vhd|
+Z24 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/BarrelShifter.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 13 barrelshifter 0 22 8Rk9^2X4oD3?;k`izO6241
+!i122 212
+l40
+L23 155
+VIDP=nB8JckkSXzV]Qo4OX0
+!s100 o18V8HWeke^dBDkobP4kc0
+R8
+33
+R9
+!i10b 1
+R10
+R23
+R24
+!i113 0
+R13
+R14
+Ebranch_comp
+R2
+R3
+R4
+R5
+!i122 213
+R1
+Z25 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/branch_comp.vhd
+Z26 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/branch_comp.vhd
+l0
+L8 1
+Vf:?5_D=:NCofOC3:0bfS80
+!s100 BFB_XWPP[0OgfGdWhB3g^1
+R8
+33
+R9
+!i10b 1
+R10
+Z27 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/branch_comp.vhd|
+Z28 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/branch_comp.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+R5
+DEx4 work 11 branch_comp 0 22 f:?5_D=:NCofOC3:0bfS80
+!i122 213
+l21
+L18 49
+V37N^?=ie4nS`Rf?Gf=U=R1
+!s100 ^]Je_iQBZIiz5FLJjQPZj0
+R8
+33
+R9
+!i10b 1
+R10
+R27
+R28
+!i113 0
+R13
+R14
+Econtrolunit
+R2
+R4
+R5
+!i122 214
+R1
+Z29 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ControlUnit.vhd
+Z30 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ControlUnit.vhd
+l0
+L8 1
+VG1Hkcj_X1RG<zb9=?J:5h3
+!s100 Wl5EDD7anKDR:lffklPTD3
+R8
+33
+R9
+!i10b 1
+R10
+Z31 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ControlUnit.vhd|
+Z32 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ControlUnit.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R4
+R5
+DEx4 work 11 controlunit 0 22 G1Hkcj_X1RG<zb9=?J:5h3
+!i122 214
+l30
+L25 159
+V>MGVPoejh64jNSKEGde;11
+!s100 WKFRYgQ9lHeJKF=VU@M?>3
+R8
+33
+R9
+!i10b 1
+R10
+R31
+R32
+!i113 0
+R13
+R14
+Edecoder_5to32
+R2
+R3
+R4
+R5
+!i122 215
+R1
+Z33 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/decoder_5to32.vhd
+Z34 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/decoder_5to32.vhd
+l0
+L21 1
+VV6n7fZWfk99l45eKG7Ro^1
+!s100 nN`?GRk[^^n0mOBz?_eE31
+R8
+33
+R9
+!i10b 1
+R10
+Z35 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/decoder_5to32.vhd|
+Z36 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/decoder_5to32.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R3
+R4
+R5
+DEx4 work 13 decoder_5to32 0 22 V6n7fZWfk99l45eKG7Ro^1
+!i122 215
+l29
+L28 11
+V;=`:TY1:kaTTcaa6g><=d0
+!s100 D2LKZ@[EnAQ1RIE>BKImI2
+R8
+33
+R9
+!i10b 1
+R10
+R35
+R36
+!i113 0
+R13
+R14
+Edffg
+R2
+R4
+R5
+!i122 216
+R1
+Z37 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/dffg.vhd
+Z38 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/dffg.vhd
+l0
+R17
+VH7[7fQclb0RF5ljXe<KKY0
+!s100 T4gcXQGMCgKJbn8XhBM;b0
+R8
+33
+R9
+!i10b 1
+R10
+Z39 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/dffg.vhd|
+Z40 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/dffg.vhd|
+!i113 0
+R13
+R14
+Amixed
+R4
+R5
+DEx4 work 4 dffg 0 22 H7[7fQclb0RF5ljXe<KKY0
+!i122 216
+l37
+L33 29
+VM>A>L<U`E78`0<h>bR]Yh3
+!s100 iOdlTUid@@]UimFK_53^C1
+R8
+33
+R9
+!i10b 1
+R10
+R39
+R40
+!i113 0
+R13
+R14
+Efetchlogic
+Z41 w1764207058
+R3
+R4
+R5
+!i122 238
+R1
+Z42 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/FetchLogic.vhd
+Z43 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/FetchLogic.vhd
+l0
+Z44 L17 1
+VUQT:G`U=CGQb@gZgPccj61
+!s100 3iE9GPDlagkI7LdK>ODUc1
+R8
+33
+Z45 !s110 1764207790
+!i10b 1
+Z46 !s108 1764207790.000000
+Z47 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/FetchLogic.vhd|
+Z48 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/FetchLogic.vhd|
+!i113 0
+R13
+R14
+Astructure
+R3
+R4
+R5
+DEx4 work 10 fetchlogic 0 22 UQT:G`U=CGQb@gZgPccj61
+!i122 238
+l53
+L34 50
+Ve?^zoGde[E[2zjDdN]VEF2
+!s100 f8j=F:ng^QVb<nGFhTJj12
+R8
+33
+R45
+!i10b 1
+R46
+R47
+R48
+!i113 0
+R13
+R14
+Eforwarding_unit
+Z49 w1764207757
+R3
+R4
+R5
+!i122 217
+R1
+Z50 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Forwarding_Unit.vhd
+Z51 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Forwarding_Unit.vhd
+l0
+L5 1
+Vm9OlD?_5G@__X^DN@?m:z2
+!s100 lQS8d[4okeUI:jM306T0n3
+R8
+33
+R9
+!i10b 1
+R10
+Z52 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Forwarding_Unit.vhd|
+Z53 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Forwarding_Unit.vhd|
+!i113 0
+R13
+R14
+Abehaviour
+R3
+R4
+R5
+DEx4 work 15 forwarding_unit 0 22 m9OlD?_5G@__X^DN@?m:z2
+!i122 217
+l23
+L22 24
+VKeZGkcZT_SMD0dUQ`R25b2
+!s100 ^_ci<4]8CITh_lK]?G^7E3
+R8
+33
+R9
+!i10b 1
+R10
+R52
+R53
+!i113 0
+R13
+R14
+Efull_adder
+R2
+R4
+R5
+!i122 218
+R1
+Z54 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Full_Adder.vhd
+Z55 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Full_Adder.vhd
+l0
+Z56 L16 1
+V^meZ:?7TcPYfQJMMVNEUo3
+!s100 e3gW95Dem[Z^YThZODzSg1
+R8
+33
+Z57 !s110 1764207789
+!i10b 1
+Z58 !s108 1764207789.000000
+Z59 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Full_Adder.vhd|
+Z60 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Full_Adder.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 10 full_adder 0 22 ^meZ:?7TcPYfQJMMVNEUo3
+!i122 218
+l56
+L25 48
+Vc2^zl:878jbE1^BfHWN`b3
+!s100 9hkH[Ka7KdPljb3;Dg?iG2
+R8
+33
+R57
+!i10b 1
+R58
+R59
+R60
+!i113 0
+R13
+R14
+Ehdu
+Z61 w1764206370
+R3
+R4
+R5
+!i122 219
+R1
+Z62 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/HDU.vhd
+Z63 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/HDU.vhd
+l0
+L6 1
+Vdbl;SOnHH2?fj2cUOgegV3
+!s100 _QjSHLbn7BifF5Ul>D_jj2
+R8
+33
+R57
+!i10b 1
+R58
+Z64 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/HDU.vhd|
+Z65 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/HDU.vhd|
+!i113 0
+R13
+R14
+Abehaviour
+R3
+R4
+R5
+DEx4 work 3 hdu 0 22 dbl;SOnHH2?fj2cUOgegV3
+!i122 219
+l22
+L21 34
+V;JThm7^WADM82AIg3iX:^2
+!s100 Y>G<g[OVcLjV<ki6;NlKh2
+R8
+33
+R57
+!i10b 1
+R58
+R64
+R65
+!i113 0
+R13
+R14
+Eimmgen
+R2
+R4
+R5
+!i122 220
+R1
+Z66 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ImmGen.vhd
+Z67 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ImmGen.vhd
+l0
+L8 1
+V^hhgUBn]=mLY2DYI5JUdF1
+!s100 ?_Og]Y1J6QmcOZLd[EB183
+R8
+33
+R57
+!i10b 1
+R58
+Z68 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ImmGen.vhd|
+Z69 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ImmGen.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R4
+R5
+DEx4 work 6 immgen 0 22 ^hhgUBn]=mLY2DYI5JUdF1
+!i122 220
+l22
+L16 22
+VR]8K@27mXPg><4Y:BE7TO2
+!s100 8=:CkWlD8>;WX1^3P<g`L3
+R8
+33
+R57
+!i10b 1
+R58
+R68
+R69
+!i113 0
+R13
+R14
+Einvg
+R2
+R4
+R5
+!i122 221
+R1
+Z70 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/invg.vhd
+Z71 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/invg.vhd
+l0
+R17
+VzJhOLc0g_4RfSF]IXa;:73
+!s100 _XK?_^5z0Rm1<k12?;5R?2
+R8
+33
+R57
+!i10b 1
+R58
+Z72 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/invg.vhd|
+Z73 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/invg.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R4
+R5
+DEx4 work 4 invg 0 22 zJhOLc0g_4RfSF]IXa;:73
+!i122 221
+l31
+L30 6
+VT@AA60h>IXVJ?D^`RRiZk1
+!s100 bk7I76o8e1LURdoZEQb8H0
+R8
+33
+R57
+!i10b 1
+R58
+R72
+R73
+!i113 0
+R13
+R14
+Emem
+R2
+R3
+R4
+R5
+!i122 222
+R1
+Z74 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mem.vhd
+Z75 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mem.vhd
+l0
+L9 1
+VIaWjVnRIZ@L`GD?cZFAJ]1
+!s100 6nX8`H4`ecZO5kSW]>3zE1
+R8
+33
+R57
+!i10b 1
+R58
+Z76 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mem.vhd|
+Z77 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mem.vhd|
+!i113 0
+R13
+R14
+Artl
+R3
+R4
+R5
+DEx4 work 3 mem 0 22 IaWjVnRIZ@L`GD?cZFAJ]1
+!i122 222
+l38
+L28 24
+V9`YRb5JS0c?f]mcBnOk0U3
+!s100 lm9NOOd3?5?^28X?Ff2l33
+R8
+33
+R57
+!i10b 1
+R58
+R76
+R77
+!i113 0
+R13
+R14
+Emux2t1
+R2
+R4
+R5
+!i122 223
+R1
+Z78 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1.vhd
+Z79 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1.vhd
+l0
+Z80 L15 1
+V54z5h?lELAgQbE@Nja1ik1
+!s100 H11m4U50>Y>M1k0[Agd1?0
+R8
+33
+R57
+!i10b 1
+R58
+Z81 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1.vhd|
+Z82 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 6 mux2t1 0 22 54z5h?lELAgQbE@Nja1ik1
+!i122 223
+l45
+L22 45
+VUh?PEX=NH[j:<Y>_QiX2D1
+!s100 dDU5>>50DTl[_[kmjI_B?2
+R8
+33
+R57
+!i10b 1
+R58
+R81
+R82
+!i113 0
+R13
+R14
+Emux2t1_n
+R2
+R4
+R5
+!i122 240
+R1
+Z83 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1_N.vhd
+Z84 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1_N.vhd
+l0
+L19 1
+V5n1^Ogoh;OOWa54IIl?h03
+!s100 0@In=T1DDUgNzW:9REei52
+R8
+33
+R45
+!i10b 1
+R46
+Z85 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1_N.vhd|
+Z86 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux2t1_N.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 8 mux2t1_n 0 22 5n1^Ogoh;OOWa54IIl?h03
+!i122 240
+l37
+L29 26
+VaDP?I^ALh9zl1<cdEcOS62
+!s100 3XU;PBFYkPnC?X>P0R3mf1
+R8
+33
+R45
+!i10b 1
+R46
+R85
+R86
+!i113 0
+R13
+R14
+Emux32t1_n
+R2
+R4
+R5
+!i122 226
+R1
+Z87 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux32t1_N.vhd
+Z88 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux32t1_N.vhd
+l0
+R56
+V_W4FnliCc;EXai@H0:0Ud2
+!s100 jg[R[UY@LL72cUj0aiZ<E3
+R8
+33
+R57
+!i10b 1
+R58
+Z89 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux32t1_N.vhd|
+Z90 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux32t1_N.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 9 mux32t1_n 0 22 _W4FnliCc;EXai@H0:0Ud2
+!i122 226
+l87
+L56 80
+V?K:9=dOalcLNF75P3Gf>V0
+!s100 jiXdofDObOMa;FH<6NZjJ2
+R8
+33
+R57
+!i10b 1
+R58
+R89
+R90
+!i113 0
+R13
+R14
+Emux3t1_n
+R2
+R3
+R4
+R5
+!i122 239
+R1
+Z91 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux3t1_N.vhd
+Z92 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux3t1_N.vhd
+l0
+L10 1
+V0AIma:49`_zGj]^aNLcjZ1
+!s100 gc;A<MFahjd;8ncVlO55S3
+R8
+33
+R45
+!i10b 1
+R46
+Z93 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux3t1_N.vhd|
+Z94 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux3t1_N.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 8 mux3t1_n 0 22 0AIma:49`_zGj]^aNLcjZ1
+!i122 239
+l21
+L20 8
+V>cd5SLQScC0ZC[;W^08SP3
+!s100 LY]8kFfL;^U;b@ER_BO:82
+R8
+33
+R45
+!i10b 1
+R46
+R93
+R94
+!i113 0
+R13
+R14
+Emux4t1_n
+R2
+R4
+R5
+!i122 225
+R1
+Z95 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux4t1_N.vhd
+Z96 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux4t1_N.vhd
+l0
+R44
+V9oJH;kn1AWA2?TfnY?hkL1
+!s100 `ce]j^=OLg:>?WQC?AD2A0
+R8
+33
+R57
+!i10b 1
+R58
+Z97 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux4t1_N.vhd|
+Z98 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/mux4t1_N.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 8 mux4t1_n 0 22 9oJH;kn1AWA2?TfnY?hkL1
+!i122 225
+l38
+L29 43
+V>>Ulo[4jReSJ`_6lVB7N;0
+!s100 j]UolN[E]@`3HP=jW1c4^0
+R8
+33
+R57
+!i10b 1
+R58
+R97
+R98
+!i113 0
+R13
+R14
+En_full_adder
+R2
+R4
+R5
+!i122 227
+R1
+Z99 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/N_Full_Adder.vhd
+Z100 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/N_Full_Adder.vhd
+l0
+R56
+V=SQ4zJI<oe0fgl::@J]3i1
+!s100 k`1I`=zFzMgdc88i^>B2d2
+R8
+33
+R57
+!i10b 1
+R58
+Z101 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/N_Full_Adder.vhd|
+Z102 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/N_Full_Adder.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 12 n_full_adder 0 22 =SQ4zJI<oe0fgl::@J]3i1
+!i122 227
+l38
+L26 30
+V8EZT?0;<Sdi]4OPYjHPT00
+!s100 cfa<lidFinj<AkjTggSGN2
+R8
+33
+R57
+!i10b 1
+R58
+R101
+R102
+!i113 0
+R13
+R14
+Enadd_sub
+R2
+R4
+R5
+!i122 228
+R1
+Z103 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/nAdd_Sub.vhd
+Z104 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/nAdd_Sub.vhd
+l0
+R80
+VXn7eA:z9MPLgAjE8P9JkU2
+!s100 O_QH[5Nn`JRGgP7K4hzX11
+R8
+33
+R57
+!i10b 1
+R58
+Z105 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/nAdd_Sub.vhd|
+Z106 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/nAdd_Sub.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 8 nadd_sub 0 22 Xn7eA:z9MPLgAjE8P9JkU2
+!i122 228
+l53
+L25 58
+VGbbRQ>mLe:_25_THF49:T2
+!s100 3I@HEO[e0`J5z139Bk@5f3
+R8
+33
+R57
+!i10b 1
+R58
+R105
+R106
+!i113 0
+R13
+R14
+Eorg2
+R2
+R4
+R5
+!i122 229
+R1
+Z107 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/org2.vhd
+Z108 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/org2.vhd
+l0
+R17
+V0FzB9ATDX9TV=M:n@=VB83
+!s100 bGQ1F9eW^Q17OoL9h4g7z2
+R8
+33
+R57
+!i10b 1
+R58
+Z109 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/org2.vhd|
+Z110 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/org2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R4
+R5
+DEx4 work 4 org2 0 22 0FzB9ATDX9TV=M:n@=VB83
+!i122 229
+l32
+R20
+V0JC>N7cRXc=9bni@>dg7o3
+!s100 h5_AzR3TdRA0a_K=dQ>mI2
+R8
+33
+R57
+!i10b 1
+R58
+R109
+R110
+!i113 0
+R13
+R14
+Eprogramcounter
+Z111 w1764193496
+R4
+R5
+!i122 230
+R1
+Z112 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ProgramCounter.vhd
+Z113 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ProgramCounter.vhd
+l0
+R80
+VDK82`:m6oS4]gHicz2Glj0
+!s100 X`1O??VRLk<ELC@Iann5_3
+R8
+33
+R57
+!i10b 1
+R58
+Z114 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ProgramCounter.vhd|
+Z115 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/ProgramCounter.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R4
+R5
+DEx4 work 14 programcounter 0 22 DK82`:m6oS4]gHicz2Glj0
+!i122 230
+l27
+L25 18
+VF^j6HPX6OU^7n2WoVek191
+!s100 `XFi?8kMPbjR2<j?ILe`@0
+R8
+33
+R57
+!i10b 1
+R58
+R114
+R115
+!i113 0
+R13
+R14
+Ereg
+R2
+R4
+R5
+!i122 241
+R1
+Z116 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg.vhd
+Z117 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg.vhd
+l0
+R17
+V`PX^3h8TjOoe:BSO9PXbo0
+!s100 [YR2K8dfC;91mFlo`2lkO2
+R8
+33
+R45
+!i10b 1
+R46
+Z118 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg.vhd|
+Z119 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R4
+R5
+DEx4 work 3 reg 0 22 `PX^3h8TjOoe:BSO9PXbo0
+!i122 241
+l34
+L33 11
+VW]PYjc?1E[F?b0T?m:Xa]1
+!s100 nf[`4S9cGXRcE4GX;@:6^1
+R8
+33
+R45
+!i10b 1
+R46
+R118
+R119
+!i113 0
+R13
+R14
+Ereg_ex_mem
+Z120 w1764027877
+R4
+R5
+!i122 231
+R1
+Z121 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_EX_MEM.vhd
+Z122 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_EX_MEM.vhd
+l0
+R56
+VN4lQ6OnckM4kk`ZM1=HQ>2
+!s100 4JTM:58mc:Ma<1@zQVi7[0
+R8
+33
+R45
+!i10b 1
+R58
+Z123 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_EX_MEM.vhd|
+Z124 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_EX_MEM.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 10 reg_ex_mem 0 22 N4lQ6OnckM4kk`ZM1=HQ>2
+!i122 231
+l106
+L61 163
+V61H1:lbcM:`jnT8D8OXKW3
+!s100 EageK@>P2eIY>dOho:D^51
+R8
+33
+R45
+!i10b 1
+R58
+R123
+R124
+!i113 0
+R13
+R14
+Ereg_id_ex
+Z125 w1764206835
+R4
+R5
+!i122 232
+R1
+Z126 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_ID_EX.vhd
+Z127 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_ID_EX.vhd
+l0
+R56
+V_BM;h?5fmZ1OgoVaBo?IU3
+!s100 >IZAc^=1f:EH@ZA6@6imB3
+R8
+33
+R45
+!i10b 1
+R46
+Z128 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_ID_EX.vhd|
+Z129 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_ID_EX.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 9 reg_id_ex 0 22 _BM;h?5fmZ1OgoVaBo?IU3
+!i122 232
+l134
+L74 186
+V^nkg^6zCkn>YeV?oMVPVZ1
+!s100 _niVGTlcM:i4KO[VJPn@o2
+R8
+33
+R45
+!i10b 1
+R46
+R128
+R129
+!i113 0
+R13
+R14
+Ereg_if_id
+R2
+R4
+R5
+!i122 233
+R1
+Z130 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_IF_ID.vhd
+Z131 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_IF_ID.vhd
+l0
+R56
+Vh83B9<4F=Q`F<@O5Qh@DB0
+!s100 <@?@Cmjf`AAMKIRVzhe[F1
+R8
+33
+R45
+!i10b 1
+R46
+Z132 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_IF_ID.vhd|
+Z133 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_IF_ID.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 9 reg_if_id 0 22 h83B9<4F=Q`F<@O5Qh@DB0
+!i122 233
+l59
+L37 61
+Vn]zF[PKN^`T8RhU<4Ko0<1
+!s100 gZb^TZfTbPg:W`gh0eNK22
+R8
+33
+R45
+!i10b 1
+R46
+R132
+R133
+!i113 0
+R13
+R14
+Ereg_mem_wb
+Z134 w1764027909
+R4
+R5
+!i122 234
+R1
+Z135 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_MEM_WB.vhd
+Z136 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_MEM_WB.vhd
+l0
+R56
+VOce^KmJi]amW=:0Uj_E9F1
+!s100 ;i>]kBEJnBDHCf4^b9dbD0
+R8
+33
+R45
+!i10b 1
+R46
+Z137 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_MEM_WB.vhd|
+Z138 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_MEM_WB.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 10 reg_mem_wb 0 22 Oce^KmJi]amW=:0Uj_E9F1
+!i122 234
+l88
+L51 125
+V<>4Mkl>A>>f]mRNLJD3kb2
+!s100 ZgfM7]Th;`zMSK2dC4R510
+R8
+33
+R45
+!i10b 1
+R46
+R137
+R138
+!i113 0
+R13
+R14
+Ereg_n
+R2
+R4
+R5
+!i122 235
+R1
+Z139 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_N.vhd
+Z140 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_N.vhd
+l0
+L20 1
+VkSEHXdF^8[nBazjEKU;@]1
+!s100 XjOJ??17>RCNU?jR;?4:^3
+R8
+33
+R45
+!i10b 1
+R46
+Z141 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_N.vhd|
+Z142 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/Reg_N.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 5 reg_n 0 22 kSEHXdF^8[nBazjEKU;@]1
+!i122 235
+l41
+L31 22
+VLPAI`6o>oPQg]SEZ4CYm<0
+!s100 Q^^b1CbZ>Z:f=<Pk9O4dc3
+R8
+33
+R45
+!i10b 1
+R46
+R141
+R142
+!i113 0
+R13
+R14
+Eregisterfile
+R2
+R3
+R4
+R5
+!i122 236
+R1
+Z143 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RegisterFile.vhd
+Z144 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RegisterFile.vhd
+l0
+R56
+V@k6^m;glKNlQP[ZH<U6;A2
+!s100 ;M_bRam0Z?zjB9V>OOKNm0
+R8
+33
+R45
+!i10b 1
+R46
+Z145 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RegisterFile.vhd|
+Z146 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RegisterFile.vhd|
+!i113 0
+R13
+R14
+Aregfile
+R3
+R4
+R5
+DEx4 work 12 registerfile 0 22 @k6^m;glKNlQP[ZH<U6;A2
+!i122 236
+l99
+L30 179
+VXN;c=XofD^zbMO4;efDg<1
+!s100 jlFN7_jc=YBEjX166cH^m0
+R8
+33
+R45
+!i10b 1
+R46
+R145
+R146
+!i113 0
+R13
+R14
+Eriscv_processor
+Z147 w1764207614
+R4
+R5
+!i122 237
+R1
+Z148 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RISCV_Processor.vhd
+Z149 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RISCV_Processor.vhd
+l0
+L13 1
+V0IUa[lhLlY2ojhC21B7]42
+!s100 WPf>RRkQ0K?8D:R?8M^3>0
+R8
+33
+R45
+!i10b 1
+R46
+Z150 !s90 -reportprogress|300|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RISCV_Processor.vhd|
+Z151 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/RISCV_Processor.vhd|
+!i113 0
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 15 riscv_processor 0 22 0IUa[lhLlY2ojhC21B7]42
+!i122 237
+l462
+L25 873
+VKL9l>D_;ZVAHnLJ42>b1<0
+!s100 28zd7?[;]R=_hcQK=YDY`0
+R8
+33
+R45
+!i10b 1
+R46
+R150
+R151
+!i113 0
+R13
+R14
+Etb_reg_ex_mem
+Z152 w1764029852
+R3
+R4
+R5
+!i122 242
+R1
+Z153 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_EX_MEM.vhd
+Z154 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_EX_MEM.vhd
+l0
+L5 1
+VKIm^V_DoMQl<9BEnUge[22
+!s100 97noJ;0C;>1MdEPcYjIQ02
+R8
+33
+R45
+!i10b 1
+R46
+Z155 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_EX_MEM.vhd|
+Z156 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_EX_MEM.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 13 tb_reg_ex_mem 0 22 KIm^V_DoMQl<9BEnUge[22
+!i122 242
+l49
+L8 111
+Vz2XLQcaOc[N<TmAO]2KVC0
+!s100 ?:XEm548>^W39_OMlF2Bj1
+R8
+33
+R45
+!i10b 1
+R46
+R155
+R156
+!i113 0
+R13
+R14
+Etb_reg_id_ex
+Z157 w1764029854
+R3
+R4
+R5
+!i122 243
+R1
+Z158 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_ID_EX.vhd
+Z159 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_ID_EX.vhd
+l0
+L5 1
+Vm2f@JTbT_a:NHBcWLDiRT0
+!s100 Y;_^SfFnjQJ=L_]JN@Rk<1
+R8
+33
+R45
+!i10b 1
+R46
+Z160 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_ID_EX.vhd|
+Z161 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_ID_EX.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 12 tb_reg_id_ex 0 22 m2f@JTbT_a:NHBcWLDiRT0
+!i122 243
+l54
+L8 121
+VAEV>:mY^mBmJW>@NB5g_R0
+!s100 YJJk^j[DJX:ZhF1F:E6lU2
+R8
+33
+R45
+!i10b 1
+R46
+R160
+R161
+!i113 0
+R13
+R14
+Etb_reg_if_id
+R157
+R3
+R4
+R5
+!i122 244
+R1
+Z162 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_IF_ID.vhd
+Z163 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_IF_ID.vhd
+l0
+L5 1
+V1[ZfA>zoZ[gzbKBi4abi23
+!s100 X6g1EzLBH5QDmXJ>?_JJT2
+R8
+33
+R45
+!i10b 1
+R46
+Z164 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_IF_ID.vhd|
+Z165 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_IF_ID.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 12 tb_reg_if_id 0 22 1[ZfA>zoZ[gzbKBi4abi23
+!i122 244
+l43
+L8 96
+V]K0aKD9;j[9fck13;:I;i0
+!s100 6AlO>Y]G^m:=cS;:gIC<X1
+R8
+33
+R45
+!i10b 1
+R46
+R164
+R165
+!i113 0
+R13
+R14
+Etb_reg_mem_wb
+Z166 w1764029855
+R3
+R4
+R5
+!i122 245
+R1
+Z167 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_MEM_WB.vhd
+Z168 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_MEM_WB.vhd
+l0
+L5 1
+VBmbcV3>MeWzX<6NHDhUlA3
+!s100 FHc_oE_EZEa[dDil29b;d2
+R8
+33
+Z169 !s110 1764207791
+!i10b 1
+Z170 !s108 1764207791.000000
+Z171 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_MEM_WB.vhd|
+Z172 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/tb_Reg_MEM_WB.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 13 tb_reg_mem_wb 0 22 BmbcV3>MeWzX<6NHDhUlA3
+!i122 245
+l49
+L8 107
+VF:Qk@1ZKQ=ClCVI?5Rh?T0
+!s100 HO]dHia15fz;9HH1=KBGj1
+R8
+33
+R169
+!i10b 1
+R170
+R171
+R172
+!i113 0
+R13
+R14
+Exorg2
+R2
+R4
+R5
+!i122 246
+R1
+Z173 8/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/xorg2.vhd
+Z174 F/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/xorg2.vhd
+l0
+R17
+VV6C:miP5l_oAXXFV_WP4`3
+!s100 [hI[mXFH4_j16U;>U1Lfn2
+R8
+33
+R169
+!i10b 1
+R170
+Z175 !s90 -reportprogress|30|-work|work|/home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/xorg2.vhd|
+Z176 !s107 /home/estesm/cpre381/Single_Cycle_RISC-V_Datapath_HW_Pipeline/project files/xorg2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R4
+R5
+Z177 DEx4 work 5 xorg2 0 22 V6C:miP5l_oAXXFV_WP4`3
+!i122 246
+l32
+R20
+Z178 V0<8Ik`hGa2ooIj9K`Y3Wc0
+Z179 !s100 Z6[FAPS4fBLB`F?OO<AY72
+R8
+33
+R169
+!i10b 1
+R170
+R175
+R176
+!i113 0
+R13
+R14
